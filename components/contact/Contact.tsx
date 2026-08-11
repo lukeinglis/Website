@@ -20,7 +20,7 @@ const socialLinks = [
   },
   {
     name: "LinkedIn",
-    url: "https://linkedin.com/in/lukeinglis",
+    url: "https://www.linkedin.com/in/luke-inglis/",
     icon: (
       <svg
         width="20"

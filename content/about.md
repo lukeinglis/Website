@@ -1,15 +1,15 @@
 # About
 
-I'm a software engineer who builds tools and systems that make complex work simpler. With experience spanning full-stack development, cloud infrastructure, and developer tooling, I focus on shipping software that's reliable, maintainable, and genuinely useful.
+I'm an AI research engineer on Red Hat's AI Innovation team, based in Boston, MA. My work focuses on making large language models faster and more efficient — from KV cache quantization and inference-time scaling to reinforcement learning and synthetic data generation.
 
-I care about the craft of engineering — clean APIs, thoughtful abstractions, and systems that are easy to reason about. I believe the best code is the code you don't have to think twice about.
+I spend most of my time at the intersection of research and engineering: building tools and libraries that turn optimization techniques into practical, deployable improvements. Whether it's experimenting with attention block optimization or building infrastructure for synthetic data pipelines, I care about work that moves from paper to production.
 
-When I'm not writing code, you'll find me exploring new technologies, contributing to open source, and thinking about how to make developer experiences better.
+I'm an active contributor to open-source AI projects and a believer in open development as the best way to push the field forward. I studied at Auburn University and have been fortunate to collaborate with a great team of researchers at Red Hat pushing the boundaries of what open-source AI can do.
 
 ## What I Work With
 
-- **Languages:** TypeScript, Python, Go, Rust
-- **Frontend:** React, Next.js, Tailwind CSS
-- **Backend:** Node.js, FastAPI, PostgreSQL
-- **Infrastructure:** AWS, Vercel, Docker, Kubernetes
-- **Tools:** Git, GitHub Actions, Terraform
+- **Languages:** Python, TypeScript, JavaScript
+- **AI/ML:** LLM Optimization, Inference Scaling, KV Cache Quantization, Reinforcement Learning
+- **Frameworks:** PyTorch, Synthetic Data Generation, Agentic Systems
+- **Infrastructure:** Red Hat OpenShift, Kubernetes, Open Source AI
+- **Tools:** Git, Obsidian, Claude Code, GitHub Actions

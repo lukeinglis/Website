@@ -3,14 +3,28 @@
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 
 const skills = [
-  { category: "Languages", items: ["TypeScript", "Python", "Go", "Rust"] },
-  { category: "Frontend", items: ["React", "Next.js", "Tailwind CSS"] },
-  { category: "Backend", items: ["Node.js", "FastAPI", "PostgreSQL"] },
+  { category: "Languages", items: ["Python", "TypeScript", "JavaScript"] },
+  {
+    category: "AI/ML",
+    items: [
+      "LLM Optimization",
+      "Inference Scaling",
+      "KV Cache Quantization",
+      "Reinforcement Learning",
+    ],
+  },
+  {
+    category: "Frameworks",
+    items: ["PyTorch", "Synthetic Data Generation", "Agentic Systems"],
+  },
   {
     category: "Infrastructure",
-    items: ["AWS", "Vercel", "Docker", "Kubernetes"],
+    items: ["Red Hat OpenShift", "Kubernetes", "Open Source AI"],
   },
-  { category: "Tools", items: ["Git", "GitHub Actions", "Terraform"] },
+  {
+    category: "Tools",
+    items: ["Git", "Obsidian", "Claude Code", "GitHub Actions"],
+  },
 ];
 
 export function About() {
@@ -31,22 +45,26 @@ export function About() {
             style={{ color: "var(--text-secondary)" }}
           >
             <p>
-              I&apos;m a software engineer who builds tools and systems that
-              make complex work simpler. With experience spanning full-stack
-              development, cloud infrastructure, and developer tooling, I focus
-              on shipping software that&apos;s reliable, maintainable, and
-              genuinely useful.
+              I&apos;m an AI research engineer on Red Hat&apos;s AI Innovation
+              team, based in Boston, MA. My work focuses on making large
+              language models faster and more efficient — from KV cache
+              quantization and inference-time scaling to reinforcement learning
+              and synthetic data generation.
             </p>
             <p>
-              I care about the craft of engineering — clean APIs, thoughtful
-              abstractions, and systems that are easy to reason about. I believe
-              the best code is the code you don&apos;t have to think twice
-              about.
+              I spend most of my time at the intersection of research and
+              engineering: building tools and libraries that turn optimization
+              techniques into practical, deployable improvements. Whether
+              it&apos;s experimenting with attention block optimization or
+              building infrastructure for synthetic data pipelines, I care about
+              work that moves from paper to production.
             </p>
             <p>
-              When I&apos;m not writing code, you&apos;ll find me exploring new
-              technologies, contributing to open source, and thinking about how
-              to make developer experiences better.
+              I&apos;m an active contributor to open-source AI projects and a
+              believer in open development as the best way to push the field
+              forward. I studied at Auburn University and collaborate with a
+              great team of researchers at Red Hat pushing the boundaries of
+              what open-source AI can do.
             </p>
           </div>
         </ScrollReveal>

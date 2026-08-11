@@ -80,8 +80,8 @@ export function Hero() {
           className="mt-6 text-lg leading-8 sm:text-xl animate-fade-in"
           style={{ color: "var(--text-secondary)", animationDelay: "0.6s" }}
         >
-          Software engineer building tools and systems that make complex work
-          simpler.
+          AI research engineer at Red Hat, making LLMs faster and more
+          efficient.
         </p>
         <div
           className="mt-10 flex items-center justify-center gap-4 animate-fade-in"
