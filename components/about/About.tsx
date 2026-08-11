@@ -17,16 +17,16 @@ const skills = [
     items: ["Enterprise AI", "LLM Optimization", "AI Product Strategy"],
   },
   {
-    category: "Languages & Frameworks",
-    items: ["Python", "TypeScript", "Next.js", "React"],
+    category: "Experience",
+    items: ["IBM Research", "MIT-IBM Watson AI Lab", "Red Hat AI Innovation Team"],
   },
   {
-    category: "Tools",
-    items: ["Git", "GitHub Actions", "VS Code", "CLI Tooling"],
-  },
-  {
-    category: "Background",
-    items: ["IBM Research", "MIT-IBM Watson AI Lab", "Red Hat AI"],
+    category: "Interests",
+    items: [
+      "Smaller Fit-for-Purpose Models",
+      "AI Reliability & Adaptability",
+      "Cost-Effective AI Systems",
+    ],
   },
 ];
 

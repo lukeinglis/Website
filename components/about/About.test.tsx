@@ -22,15 +22,14 @@ describe("About", () => {
     render(<About />);
     expect(screen.getByText("Focus Areas")).toBeInTheDocument();
     expect(screen.getByText("Domains")).toBeInTheDocument();
-    expect(screen.getByText("Languages & Frameworks")).toBeInTheDocument();
-    expect(screen.getByText("Tools")).toBeInTheDocument();
-    expect(screen.getByText("Background")).toBeInTheDocument();
+    expect(screen.getByText("Experience")).toBeInTheDocument();
+    expect(screen.getByText("Interests")).toBeInTheDocument();
   });
 
   it("renders skill items", () => {
     render(<About />);
     expect(screen.getByText("Inference-Time Scaling")).toBeInTheDocument();
     expect(screen.getByText("Enterprise AI")).toBeInTheDocument();
-    expect(screen.getByText("Python")).toBeInTheDocument();
+    expect(screen.getByText("IBM Research")).toBeInTheDocument();
   });
 });
