@@ -1,0 +1,11 @@
+.claude/
+skills/
+.factory/
+coverage/
+node_modules/
+.next/
+out/
+build/
+.vercel/
+factory.md
+AGENTS.md
