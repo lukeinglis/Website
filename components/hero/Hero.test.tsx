@@ -1,10 +1,11 @@
 import { render, screen } from "@testing-library/react";
-import { describe, expect, it, vi } from "vitest";
+import { describe, expect, it, vi, beforeEach, afterEach } from "vitest";
 import { Hero } from "./Hero";
 
 vi.mock("@/app/providers/TimeThemeProvider", () => ({
   useTimeTheme: () => ({
     phase: "morning" as const,
+    season: "spring" as const,
     mode: "auto" as const,
     setMode: vi.fn(),
     reducedMotion: false,
@@ -13,6 +14,15 @@ vi.mock("@/app/providers/TimeThemeProvider", () => ({
 }));
 
 describe("Hero", () => {
+  beforeEach(() => {
+    vi.useFakeTimers();
+    vi.setSystemTime(new Date(2025, 0, 8, 10, 0, 0));
+  });
+
+  afterEach(() => {
+    vi.useRealTimers();
+  });
+
   it("renders the name", () => {
     render(<Hero />);
     expect(

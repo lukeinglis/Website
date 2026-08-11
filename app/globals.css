@@ -9,6 +9,8 @@
   --text-primary: #171717;
   --text-secondary: #525252;
   --accent: #2563eb;
+  --accent-seasonal: #10b981;
+  --particle-color: #f9a8d4;
   --background: var(--bg-primary);
   --foreground: var(--text-primary);
 }

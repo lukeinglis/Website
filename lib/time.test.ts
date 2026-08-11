@@ -1,5 +1,10 @@
 import { describe, expect, it } from "vitest";
-import { getGreeting, getPhaseForHour, getSeasonForDate } from "./time";
+import {
+  getDayOfWeek,
+  getGreeting,
+  getPhaseForHour,
+  getSeasonForDate,
+} from "./time";
 
 describe("getPhaseForHour", () => {
   it("returns night for midnight (0)", () => {
@@ -122,24 +127,73 @@ describe("getSeasonForDate", () => {
   });
 });
 
+describe("getDayOfWeek", () => {
+  it("returns 0 for Sunday", () => {
+    expect(getDayOfWeek(new Date(2025, 0, 5))).toBe(0);
+  });
+
+  it("returns 1 for Monday", () => {
+    expect(getDayOfWeek(new Date(2025, 0, 6))).toBe(1);
+  });
+
+  it("returns 5 for Friday", () => {
+    expect(getDayOfWeek(new Date(2025, 0, 3))).toBe(5);
+  });
+});
+
 describe("getGreeting", () => {
-  it("returns Good morning for dawn", () => {
+  it("returns Good morning for dawn without date", () => {
     expect(getGreeting("dawn")).toBe("Good morning");
   });
 
-  it("returns Good morning for morning", () => {
+  it("returns Good morning for morning without date", () => {
     expect(getGreeting("morning")).toBe("Good morning");
   });
 
-  it("returns Good afternoon for afternoon", () => {
+  it("returns Good afternoon for afternoon without date", () => {
     expect(getGreeting("afternoon")).toBe("Good afternoon");
   });
 
-  it("returns Good evening for evening", () => {
+  it("returns Good evening for evening without date", () => {
     expect(getGreeting("evening")).toBe("Good evening");
   });
 
-  it("returns Good evening for night", () => {
+  it("returns Good evening for night without date", () => {
     expect(getGreeting("night")).toBe("Good evening");
+  });
+
+  it("returns Happy Monday for dawn on Monday", () => {
+    const monday = new Date(2025, 0, 6);
+    expect(getGreeting("dawn", monday)).toBe("Happy Monday");
+  });
+
+  it("returns Happy Monday for morning on Monday", () => {
+    const monday = new Date(2025, 0, 6);
+    expect(getGreeting("morning", monday)).toBe("Happy Monday");
+  });
+
+  it("returns standard greeting for afternoon on Monday", () => {
+    const monday = new Date(2025, 0, 6);
+    expect(getGreeting("afternoon", monday)).toBe("Good afternoon");
+  });
+
+  it("returns Happy Friday for afternoon on Friday", () => {
+    const friday = new Date(2025, 0, 3);
+    expect(getGreeting("afternoon", friday)).toBe("Happy Friday");
+  });
+
+  it("returns Happy Friday for evening on Friday", () => {
+    const friday = new Date(2025, 0, 3);
+    expect(getGreeting("evening", friday)).toBe("Happy Friday");
+  });
+
+  it("returns standard greeting for morning on Friday", () => {
+    const friday = new Date(2025, 0, 3);
+    expect(getGreeting("morning", friday)).toBe("Good morning");
+  });
+
+  it("returns standard greeting for Wednesday with date", () => {
+    const wednesday = new Date(2025, 0, 1);
+    expect(getGreeting("morning", wednesday)).toBe("Good morning");
   });
 });

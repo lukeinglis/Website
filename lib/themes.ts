@@ -1,4 +1,4 @@
-import type { TimePhase } from "./time";
+import type { Season, TimePhase } from "./time";
 
 export interface ThemePalette {
   bgPrimary: string;
@@ -6,6 +6,11 @@ export interface ThemePalette {
   textPrimary: string;
   textSecondary: string;
   accent: string;
+}
+
+export interface SeasonalAccent {
+  accentSeasonal: string;
+  particleColor: string;
 }
 
 export const themes: Record<TimePhase, ThemePalette> = {
@@ -46,13 +51,43 @@ export const themes: Record<TimePhase, ThemePalette> = {
   },
 };
 
-export function getThemeCssVars(phase: TimePhase): Record<string, string> {
+export const seasonalAccents: Record<Season, SeasonalAccent> = {
+  spring: {
+    accentSeasonal: "#10B981",
+    particleColor: "#F9A8D4",
+  },
+  summer: {
+    accentSeasonal: "#FBBF24",
+    particleColor: "#F472B6",
+  },
+  fall: {
+    accentSeasonal: "#D97706",
+    particleColor: "#92400E",
+  },
+  winter: {
+    accentSeasonal: "#93C5FD",
+    particleColor: "#E2E8F0",
+  },
+};
+
+export function getThemeCssVars(
+  phase: TimePhase,
+  season?: Season,
+): Record<string, string> {
   const palette = themes[phase];
-  return {
+  const vars: Record<string, string> = {
     "--bg-primary": palette.bgPrimary,
     "--bg-secondary": palette.bgSecondary,
     "--text-primary": palette.textPrimary,
     "--text-secondary": palette.textSecondary,
     "--accent": palette.accent,
   };
+
+  if (season) {
+    const seasonal = seasonalAccents[season];
+    vars["--accent-seasonal"] = seasonal.accentSeasonal;
+    vars["--particle-color"] = seasonal.particleColor;
+  }
+
+  return vars;
 }

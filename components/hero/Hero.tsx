@@ -7,7 +7,7 @@ import { getAnimationTiming } from "@/lib/animations";
 
 export function Hero() {
   const { phase, reducedMotion } = useTimeTheme();
-  const greeting = getGreeting(phase);
+  const greeting = getGreeting(phase, new Date());
   const headingRef = useRef<HTMLHeadingElement>(null);
 
   useEffect(() => {

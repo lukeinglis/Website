@@ -4,6 +4,7 @@ import { About } from "@/components/about/About";
 import { ProjectGrid } from "@/components/projects/ProjectGrid";
 import { Contact } from "@/components/contact/Contact";
 import { Footer } from "@/components/footer/Footer";
+import { GenerativeBackground } from "@/components/background/GenerativeBackground";
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -26,6 +27,7 @@ export default function Home() {
           __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c"),
         }}
       />
+      <GenerativeBackground />
       <Nav />
       <main className="flex-1">
         <Hero />

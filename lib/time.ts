@@ -18,17 +18,32 @@ export function getSeasonForDate(date: Date): Season {
   return "winter";
 }
 
-export function getGreeting(phase: TimePhase): string {
-  switch (phase) {
-    case "dawn":
-      return "Good morning";
-    case "morning":
-      return "Good morning";
-    case "afternoon":
-      return "Good afternoon";
-    case "evening":
-      return "Good evening";
-    case "night":
-      return "Good evening";
-  }
+export function getDayOfWeek(date: Date): number {
+  return date.getDay();
+}
+
+export function getGreeting(phase: TimePhase, date?: Date): string {
+  const baseGreeting = (() => {
+    switch (phase) {
+      case "dawn":
+        return "Good morning";
+      case "morning":
+        return "Good morning";
+      case "afternoon":
+        return "Good afternoon";
+      case "evening":
+        return "Good evening";
+      case "night":
+        return "Good evening";
+    }
+  })();
+
+  if (!date) return baseGreeting;
+
+  const day = getDayOfWeek(date);
+  if (day === 1 && (phase === "dawn" || phase === "morning"))
+    return "Happy Monday";
+  if (day === 5 && (phase === "afternoon" || phase === "evening"))
+    return "Happy Friday";
+  return baseGreeting;
 }

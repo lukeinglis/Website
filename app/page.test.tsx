@@ -26,6 +26,10 @@ vi.mock("@/components/footer/Footer", () => ({
   Footer: () => <footer data-testid="footer">Footer</footer>,
 }));
 
+vi.mock("@/components/background/GenerativeBackground", () => ({
+  GenerativeBackground: () => <div data-testid="background">Background</div>,
+}));
+
 describe("Home", () => {
   it("renders all sections in order", () => {
     render(<Home />);
