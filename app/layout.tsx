@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { headers } from "next/headers";
 import { TimeThemeProvider } from "@/app/providers/TimeThemeProvider";
 import "./globals.css";
 
@@ -42,18 +43,25 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const hdrs = await headers();
+  const serverHour = hdrs.get("x-server-hour");
+
   return (
     <html
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
-        <TimeThemeProvider>{children}</TimeThemeProvider>
+        <TimeThemeProvider
+          serverHour={serverHour ? Number(serverHour) : undefined}
+        >
+          {children}
+        </TimeThemeProvider>
       </body>
     </html>
   );

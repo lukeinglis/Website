@@ -2,16 +2,12 @@ import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
 export function proxy(request: NextRequest) {
-  const response = NextResponse.next({
-    request: {
-      headers: new Headers(request.headers),
-    },
+  const requestHeaders = new Headers(request.headers);
+  requestHeaders.set("x-server-hour", String(new Date().getHours()));
+
+  return NextResponse.next({
+    request: { headers: requestHeaders },
   });
-
-  const utcHour = new Date().getUTCHours();
-  response.headers.set("x-server-hour", String(utcHour));
-
-  return response;
 }
 
 export const config = {

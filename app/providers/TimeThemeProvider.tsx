@@ -66,9 +66,19 @@ function getInitialReducedMotion(): boolean {
   return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 }
 
-export function TimeThemeProvider({ children }: { children: React.ReactNode }) {
+interface TimeThemeProviderProps {
+  children: React.ReactNode;
+  serverHour?: number;
+}
+
+export function TimeThemeProvider({
+  children,
+  serverHour,
+}: TimeThemeProviderProps) {
   const [mode, setModeState] = useState<ThemeMode>(getInitialMode);
-  const [currentHour, setCurrentHour] = useState<number>(getCurrentHour);
+  const [currentHour, setCurrentHour] = useState<number>(
+    () => serverHour ?? getCurrentHour(),
+  );
   const [reducedMotion, setReducedMotionState] = useState(
     getInitialReducedMotion,
   );
@@ -81,17 +91,20 @@ export function TimeThemeProvider({ children }: { children: React.ReactNode }) {
       (60 - new Date().getMinutes()) * 60 * 1000 -
       new Date().getSeconds() * 1000;
 
+    let interval: ReturnType<typeof setInterval> | undefined;
+
     const timeout = setTimeout(() => {
       setCurrentHour(getCurrentHour());
 
-      const interval = setInterval(() => {
+      interval = setInterval(() => {
         setCurrentHour(getCurrentHour());
       }, 3600000);
-
-      return () => clearInterval(interval);
     }, msUntilNextHour);
 
-    return () => clearTimeout(timeout);
+    return () => {
+      clearTimeout(timeout);
+      if (interval) clearInterval(interval);
+    };
   }, []);
 
   const phase = useMemo<TimePhase>(() => {
