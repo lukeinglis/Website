@@ -20,11 +20,11 @@ export const metadata: Metadata = {
     template: "%s | Luke Inglis",
   },
   description:
-    "Personal website of Luke Inglis — AI research engineer at Red Hat, focused on LLM optimization and inference scaling.",
+    "Personal website of Luke Inglis — Technical Product Manager at Red Hat AI, focused on bringing inference-time scaling and post-training techniques into enterprise AI platforms.",
   openGraph: {
     title: "Luke Inglis",
     description:
-      "AI research engineer at Red Hat, focused on LLM optimization and inference scaling.",
+      "Technical Product Manager at Red Hat AI, focused on bringing inference-time scaling and post-training techniques into enterprise AI platforms.",
     url: "https://lukeinglis.me",
     siteName: "Luke Inglis",
     locale: "en_US",
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Luke Inglis",
     description:
-      "AI research engineer at Red Hat, focused on LLM optimization and inference scaling.",
+      "Technical Product Manager at Red Hat AI, focused on bringing inference-time scaling and post-training techniques into enterprise AI platforms.",
   },
   metadataBase: new URL("https://lukeinglis.me"),
   robots: {
