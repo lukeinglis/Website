@@ -17,12 +17,16 @@ const skills = [
     items: ["Enterprise AI", "LLM Optimization", "AI Product Strategy"],
   },
   {
-    category: "Background",
-    items: ["IBM Research", "MIT-IBM Watson AI Lab", "Red Hat AI"],
+    category: "Languages & Frameworks",
+    items: ["Python", "TypeScript", "Next.js", "React"],
   },
   {
     category: "Tools",
-    items: ["Python", "TypeScript", "Git", "GitHub Actions"],
+    items: ["Git", "GitHub Actions", "VS Code", "CLI Tooling"],
+  },
+  {
+    category: "Background",
+    items: ["IBM Research", "MIT-IBM Watson AI Lab", "Red Hat AI"],
   },
 ];
 
@@ -46,7 +50,8 @@ export function About() {
             <p>
               I&apos;m a Technical Product Manager at Red Hat AI, working with
               the AI Innovation Team to translate emerging research into
-              practical product capabilities. My focus is bringing
+              practical product capabilities. I&apos;m also hands-on — I build
+              tools, write code, and ship projects. My focus is bringing
               inference-time scaling and post-training techniques into
               enterprise AI platforms.
             </p>

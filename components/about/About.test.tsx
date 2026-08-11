@@ -22,8 +22,9 @@ describe("About", () => {
     render(<About />);
     expect(screen.getByText("Focus Areas")).toBeInTheDocument();
     expect(screen.getByText("Domains")).toBeInTheDocument();
-    expect(screen.getByText("Background")).toBeInTheDocument();
+    expect(screen.getByText("Languages & Frameworks")).toBeInTheDocument();
     expect(screen.getByText("Tools")).toBeInTheDocument();
+    expect(screen.getByText("Background")).toBeInTheDocument();
   });
 
   it("renders skill items", () => {

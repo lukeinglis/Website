@@ -1,6 +1,6 @@
 # About
 
-I'm a Technical Product Manager at Red Hat AI, working with the AI Innovation Team to translate emerging research into practical product capabilities. My focus is bringing inference-time scaling and post-training techniques into enterprise AI platforms — helping organizations get more value from AI without starting from scratch.
+I'm a Technical Product Manager at Red Hat AI, working with the AI Innovation Team to translate emerging research into practical product capabilities. I'm also hands-on — I build tools, write code, and ship projects. My GitHub repos (work-vault, its_hub_demo, CMD, sdg_hub_luke, hopscotch-luke) are working projects I built, not just strategic oversight. My focus is bringing inference-time scaling and post-training techniques into enterprise AI platforms — helping organizations get more value from AI without starting from scratch.
 
 Before joining Red Hat in 2025, I spent nearly seven years at IBM Research, supporting AI research organizations and large-scale partnerships, including the MIT-IBM Watson AI Lab. In those roles, I connected research, product strategy, operations, and customer needs to accelerate the path from promising ideas to real-world impact.
 
@@ -11,4 +11,5 @@ I'm especially interested in how enterprises can improve the reliability, adapta
 - **Focus Areas:** Inference-Time Scaling, Post-Training Techniques, Model Customization, Continual Learning
 - **Domains:** Enterprise AI, LLM Optimization, AI Product Strategy
 - **Background:** IBM Research, MIT-IBM Watson AI Lab, Red Hat AI
-- **Tools:** Python, TypeScript, Git, GitHub Actions
+- **Languages:** Python, TypeScript
+- **Tools:** Git, GitHub Actions, VS Code, CLI tooling
