@@ -1,18 +1,42 @@
 [
   {
-    "name": "Website",
-    "description": "Dynamic, time-aware personal website that changes its visual identity based on time of day and season.",
-    "language": "TypeScript",
-    "stars": 0,
-    "url": "https://github.com/lukeinglis/Website",
+    "name": "work-vault",
+    "description": "An AI-powered work vault built on Obsidian + Claude Code. Structured templates, automated workflows, and MCP integrations.",
+    "language": "Python",
+    "stars": 5,
+    "url": "https://github.com/lukeinglis/work-vault",
     "updatedAt": "2026-08-01T00:00:00Z"
   },
   {
-    "name": "dotfiles",
-    "description": "Personal development environment configuration and shell setup.",
-    "language": "Shell",
-    "stars": 0,
-    "url": "https://github.com/lukeinglis/dotfiles",
+    "name": "its_hub_demo",
+    "description": "A Python library for inference-time scaling LLMs.",
+    "language": "Python",
+    "stars": 3,
+    "url": "https://github.com/lukeinglis/its_hub_demo",
+    "updatedAt": "2026-08-01T00:00:00Z"
+  },
+  {
+    "name": "CMD",
+    "description": "Connecting Models to Data.",
+    "language": "TypeScript",
+    "stars": 2,
+    "url": "https://github.com/lukeinglis/CMD",
     "updatedAt": "2026-07-01T00:00:00Z"
+  },
+  {
+    "name": "sdg_hub_luke",
+    "description": "Synthetic Data Generation Toolkit for LLMs.",
+    "language": "JavaScript",
+    "stars": 1,
+    "url": "https://github.com/lukeinglis/sdg_hub_luke",
+    "updatedAt": "2026-07-01T00:00:00Z"
+  },
+  {
+    "name": "hopscotch-luke",
+    "description": "Repo containing experimentation artifacts for the Hopscotch paper on skipping redundant attention blocks.",
+    "language": "Python",
+    "stars": 1,
+    "url": "https://github.com/lukeinglis/hopscotch-luke",
+    "updatedAt": "2026-06-01T00:00:00Z"
   }
 ]

@@ -36,7 +36,7 @@ describe("Contact", () => {
     );
     expect(screen.getByLabelText("LinkedIn")).toHaveAttribute(
       "href",
-      "https://linkedin.com/in/lukeinglis",
+      "https://www.linkedin.com/in/luke-inglis/",
     );
   });
 });
