@@ -1,0 +1,18 @@
+[
+  {
+    "name": "Website",
+    "description": "Dynamic, time-aware personal website that changes its visual identity based on time of day and season.",
+    "language": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/lukeinglis/Website",
+    "updatedAt": "2026-08-01T00:00:00Z"
+  },
+  {
+    "name": "dotfiles",
+    "description": "Personal development environment configuration and shell setup.",
+    "language": "Shell",
+    "stars": 0,
+    "url": "https://github.com/lukeinglis/dotfiles",
+    "updatedAt": "2026-07-01T00:00:00Z"
+  }
+]

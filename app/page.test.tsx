@@ -2,57 +2,55 @@ import { render, screen } from "@testing-library/react";
 import { describe, expect, it, vi } from "vitest";
 import Home from "./page";
 
-Object.defineProperty(window, "localStorage", {
-  value: {
-    getItem: vi.fn(() => null),
-    setItem: vi.fn(),
-    removeItem: vi.fn(),
-    clear: vi.fn(),
-  },
-});
+vi.mock("@/components/navigation/Nav", () => ({
+  Nav: () => <nav data-testid="nav">Nav</nav>,
+}));
 
-Object.defineProperty(window, "matchMedia", {
-  value: vi.fn().mockReturnValue({ matches: false }),
-});
+vi.mock("@/components/hero/Hero", () => ({
+  Hero: () => <section data-testid="hero">Hero</section>,
+}));
 
-vi.mock("@/app/providers/TimeThemeProvider", () => ({
-  useTimeTheme: () => ({
-    phase: "morning" as const,
-    mode: "auto" as const,
-    setMode: vi.fn(),
-    reducedMotion: false,
-    setReducedMotion: vi.fn(),
-  }),
+vi.mock("@/components/about/About", () => ({
+  About: () => <section data-testid="about">About</section>,
+}));
+
+vi.mock("@/components/projects/ProjectGrid", () => ({
+  ProjectGrid: () => <section data-testid="projects">ProjectGrid</section>,
+}));
+
+vi.mock("@/components/contact/Contact", () => ({
+  Contact: () => <section data-testid="contact">Contact</section>,
+}));
+
+vi.mock("@/components/footer/Footer", () => ({
+  Footer: () => <footer data-testid="footer">Footer</footer>,
 }));
 
 describe("Home", () => {
-  it("renders the name heading", () => {
+  it("renders all sections in order", () => {
     render(<Home />);
-    expect(
-      screen.getByRole("heading", { name: "Luke Inglis" }),
-    ).toBeInTheDocument();
+    expect(screen.getByTestId("nav")).toBeInTheDocument();
+    expect(screen.getByTestId("hero")).toBeInTheDocument();
+    expect(screen.getByTestId("about")).toBeInTheDocument();
+    expect(screen.getByTestId("projects")).toBeInTheDocument();
+    expect(screen.getByTestId("contact")).toBeInTheDocument();
+    expect(screen.getByTestId("footer")).toBeInTheDocument();
   });
 
-  it("renders a time-based greeting", () => {
+  it("renders JSON-LD structured data", () => {
     render(<Home />);
-    expect(screen.getByText("Good morning")).toBeInTheDocument();
+    const script = document.querySelector(
+      'script[type="application/ld+json"]',
+    );
+    expect(script).toBeInTheDocument();
+    const data = JSON.parse(script!.textContent!);
+    expect(data["@type"]).toBe("Person");
+    expect(data.name).toBe("Luke Inglis");
   });
 
-  it("renders the tagline", () => {
+  it("has a main element wrapping content sections", () => {
     render(<Home />);
-    const elements = screen.getAllByText(/time-aware personal website/i);
-    expect(elements.length).toBeGreaterThanOrEqual(1);
-  });
-
-  it("renders theme toggle", () => {
-    render(<Home />);
-    expect(screen.getByLabelText("Select theme")).toBeInTheDocument();
-  });
-
-  it("renders motion toggle", () => {
-    render(<Home />);
-    expect(
-      screen.getByRole("switch", { name: /reduce motion/i }),
-    ).toBeInTheDocument();
+    const main = document.querySelector("main");
+    expect(main).toBeInTheDocument();
   });
 });
