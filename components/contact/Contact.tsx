@@ -1,3 +1,7 @@
+"use client";
+
+import { ScrollReveal } from "@/components/ui/ScrollReveal";
+
 const socialLinks = [
   {
     name: "GitHub",
@@ -35,40 +39,48 @@ export function Contact() {
   return (
     <section id="contact" className="px-6 py-24">
       <div className="mx-auto max-w-3xl text-center">
-        <h2
-          className="text-3xl font-bold tracking-tight sm:text-4xl"
-          style={{ color: "var(--text-primary)" }}
-        >
-          Get in Touch
-        </h2>
-        <p
-          className="mt-4 text-base sm:text-lg"
-          style={{ color: "var(--text-secondary)" }}
-        >
-          Interested in working together or have a question? Reach out.
-        </p>
-        <a
-          href="mailto:hello@lukeinglis.me"
-          className="mt-8 inline-block rounded-lg px-8 py-3 text-base font-semibold text-white transition-opacity hover:opacity-90"
-          style={{ backgroundColor: "var(--accent)" }}
-        >
-          hello@lukeinglis.me
-        </a>
-        <div className="mt-10 flex items-center justify-center gap-6">
-          {socialLinks.map((link) => (
-            <a
-              key={link.name}
-              href={link.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="transition-opacity hover:opacity-70"
-              style={{ color: "var(--text-secondary)" }}
-              aria-label={link.name}
-            >
-              {link.icon}
-            </a>
-          ))}
-        </div>
+        <ScrollReveal>
+          <h2
+            className="text-3xl font-bold tracking-tight sm:text-4xl"
+            style={{ color: "var(--text-primary)" }}
+          >
+            Get in Touch
+          </h2>
+        </ScrollReveal>
+        <ScrollReveal delay={0.1}>
+          <p
+            className="mt-4 text-base sm:text-lg"
+            style={{ color: "var(--text-secondary)" }}
+          >
+            Interested in working together or have a question? Reach out.
+          </p>
+        </ScrollReveal>
+        <ScrollReveal delay={0.2}>
+          <a
+            href="mailto:hello@lukeinglis.me"
+            className="mt-8 inline-block rounded-lg px-8 py-3 text-base font-semibold text-white transition-opacity hover:opacity-90"
+            style={{ backgroundColor: "var(--accent)" }}
+          >
+            hello@lukeinglis.me
+          </a>
+        </ScrollReveal>
+        <ScrollReveal delay={0.3}>
+          <div className="mt-10 flex items-center justify-center gap-6">
+            {socialLinks.map((link) => (
+              <a
+                key={link.name}
+                href={link.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="transition-opacity hover:opacity-70"
+                style={{ color: "var(--text-secondary)" }}
+                aria-label={link.name}
+              >
+                {link.icon}
+              </a>
+            ))}
+          </div>
+        </ScrollReveal>
       </div>
     </section>
   );

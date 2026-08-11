@@ -1,5 +1,10 @@
+"use client";
+
+import { motion } from "framer-motion";
 import type { GitHubRepo } from "@/lib/github";
 import { languageColors } from "@/lib/github";
+import { useTimeTheme } from "@/app/providers/TimeThemeProvider";
+import { getMotionTransition } from "@/lib/animations";
 
 function formatDate(dateStr: string): string {
   const date = new Date(dateStr);
@@ -10,13 +15,15 @@ function formatDate(dateStr: string): string {
 }
 
 export function ProjectCard({ repo }: { repo: GitHubRepo }) {
+  const { phase, reducedMotion } = useTimeTheme();
+  const transition = getMotionTransition(phase);
   const langColor = repo.language
     ? (languageColors[repo.language] ?? "var(--text-secondary)")
     : null;
 
-  return (
+  const card = (
     <article
-      className="flex flex-col rounded-xl border p-6 transition-shadow duration-200 hover:shadow-lg"
+      className="flex flex-col rounded-xl border p-6 transition-shadow duration-200"
       style={{
         borderColor:
           "color-mix(in srgb, var(--text-secondary) 20%, transparent)",
@@ -75,5 +82,20 @@ export function ProjectCard({ repo }: { repo: GitHubRepo }) {
         </span>
       </div>
     </article>
+  );
+
+  if (reducedMotion) return card;
+
+  return (
+    <motion.div
+      whileHover={{
+        scale: 1.03,
+        boxShadow:
+          "0 10px 40px color-mix(in srgb, var(--accent) 15%, transparent)",
+      }}
+      transition={transition}
+    >
+      {card}
+    </motion.div>
   );
 }

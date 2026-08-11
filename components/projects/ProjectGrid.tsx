@@ -1,7 +1,10 @@
+import { Suspense } from "react";
 import type { GitHubRepo } from "@/lib/github";
 import { fetchGitHubRepos } from "@/lib/github";
 import fallbackProjects from "@/content/projects.json";
 import { ProjectCard } from "./ProjectCard";
+import { ProjectGridSkeleton } from "@/components/ui/ProjectCardSkeleton";
+import { ProjectGridClient } from "./ProjectGridClient";
 
 async function getProjects(): Promise<GitHubRepo[]> {
   try {
@@ -18,9 +21,19 @@ async function getProjects(): Promise<GitHubRepo[]> {
   }
 }
 
-export async function ProjectGrid() {
+async function ProjectList() {
   const repos = await getProjects();
 
+  return (
+    <ProjectGridClient>
+      {repos.map((repo) => (
+        <ProjectCard key={repo.name} repo={repo} />
+      ))}
+    </ProjectGridClient>
+  );
+}
+
+export async function ProjectGrid() {
   return (
     <section id="projects" className="px-6 py-24">
       <div className="mx-auto max-w-5xl">
@@ -36,11 +49,9 @@ export async function ProjectGrid() {
         >
           Open source work and recent projects, pulled live from GitHub.
         </p>
-        <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {repos.map((repo) => (
-            <ProjectCard key={repo.name} repo={repo} />
-          ))}
-        </div>
+        <Suspense fallback={<ProjectGridSkeleton />}>
+          <ProjectList />
+        </Suspense>
       </div>
     </section>
   );

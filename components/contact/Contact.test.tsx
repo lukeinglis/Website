@@ -1,6 +1,16 @@
 import { render, screen } from "@testing-library/react";
-import { describe, expect, it } from "vitest";
+import { describe, expect, it, vi } from "vitest";
 import { Contact } from "./Contact";
+
+vi.mock("@/app/providers/TimeThemeProvider", () => ({
+  useTimeTheme: () => ({
+    phase: "morning" as const,
+    mode: "auto" as const,
+    setMode: vi.fn(),
+    reducedMotion: true,
+    setReducedMotion: vi.fn(),
+  }),
+}));
 
 describe("Contact", () => {
   it("renders the heading", () => {

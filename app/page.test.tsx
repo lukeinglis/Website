@@ -39,9 +39,7 @@ describe("Home", () => {
 
   it("renders JSON-LD structured data", () => {
     render(<Home />);
-    const script = document.querySelector(
-      'script[type="application/ld+json"]',
-    );
+    const script = document.querySelector('script[type="application/ld+json"]');
     expect(script).toBeInTheDocument();
     const data = JSON.parse(script!.textContent!);
     expect(data["@type"]).toBe("Person");

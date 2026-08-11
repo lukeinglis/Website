@@ -1,6 +1,16 @@
 import { render, screen } from "@testing-library/react";
-import { describe, expect, it } from "vitest";
+import { describe, expect, it, vi } from "vitest";
 import { ProjectCard } from "./ProjectCard";
+
+vi.mock("@/app/providers/TimeThemeProvider", () => ({
+  useTimeTheme: () => ({
+    phase: "morning" as const,
+    mode: "auto" as const,
+    setMode: vi.fn(),
+    reducedMotion: true,
+    setReducedMotion: vi.fn(),
+  }),
+}));
 
 const mockRepo = {
   name: "test-repo",
