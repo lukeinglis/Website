@@ -3,27 +3,30 @@
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 
 const skills = [
-  { category: "Languages", items: ["Python", "TypeScript", "JavaScript"] },
   {
-    category: "AI/ML",
+    category: "Focus Areas",
     items: [
-      "LLM Optimization",
-      "Inference Scaling",
-      "KV Cache Quantization",
-      "Reinforcement Learning",
+      "Inference-Time Scaling",
+      "Post-Training Techniques",
+      "Model Customization",
+      "Continual Learning",
     ],
   },
   {
-    category: "Frameworks",
-    items: ["PyTorch", "Synthetic Data Generation", "Agentic Systems"],
+    category: "Domains",
+    items: ["Enterprise AI", "LLM Optimization", "AI Product Strategy"],
   },
   {
-    category: "Infrastructure",
-    items: ["Red Hat OpenShift", "Kubernetes", "Open Source AI"],
+    category: "Experience",
+    items: ["IBM Research", "MIT-IBM Watson AI Lab", "Red Hat AI Innovation Team"],
   },
   {
-    category: "Tools",
-    items: ["Git", "Obsidian", "Claude Code", "GitHub Actions"],
+    category: "Interests",
+    items: [
+      "Smaller Fit-for-Purpose Models",
+      "AI Reliability & Adaptability",
+      "Cost-Effective AI Systems",
+    ],
   },
 ];
 
@@ -45,26 +48,28 @@ export function About() {
             style={{ color: "var(--text-secondary)" }}
           >
             <p>
-              I&apos;m an AI research engineer on Red Hat&apos;s AI Innovation
-              team, based in Boston, MA. My work focuses on making large
-              language models faster and more efficient — from KV cache
-              quantization and inference-time scaling to reinforcement learning
-              and synthetic data generation.
+              I&apos;m a Technical Product Manager at Red Hat AI, working with
+              the AI Innovation Team to translate emerging research into
+              practical product capabilities. I&apos;m also hands-on — I build
+              tools, write code, and ship projects. My focus is bringing
+              inference-time scaling and post-training techniques into
+              enterprise AI platforms.
             </p>
             <p>
-              I spend most of my time at the intersection of research and
-              engineering: building tools and libraries that turn optimization
-              techniques into practical, deployable improvements. Whether
-              it&apos;s experimenting with attention block optimization or
-              building infrastructure for synthetic data pipelines, I care about
-              work that moves from paper to production.
+              Before joining Red Hat in 2025, I spent nearly seven years at IBM
+              Research, supporting AI research organizations and large-scale
+              partnerships, including the MIT-IBM Watson AI Lab. In those roles,
+              I connected research, product strategy, operations, and customer
+              needs to accelerate the path from promising ideas to real-world
+              impact.
             </p>
             <p>
-              I&apos;m an active contributor to open-source AI projects and a
-              believer in open development as the best way to push the field
-              forward. I studied at Auburn University and collaborate with a
-              great team of researchers at Red Hat pushing the boundaries of
-              what open-source AI can do.
+              I&apos;m especially interested in how enterprises can improve the
+              reliability, adaptability, and cost-effectiveness of their AI
+              systems. My current work explores how to get more value from
+              smaller, fit-for-purpose models through inference-time scaling,
+              continual learning, and flexible approaches to model
+              customization. I studied at Auburn University.
             </p>
           </div>
         </ScrollReveal>
@@ -74,7 +79,7 @@ export function About() {
               className="text-xl font-semibold"
               style={{ color: "var(--text-primary)" }}
             >
-              What I Work With
+              What I Focus On
             </h3>
           </ScrollReveal>
           <ScrollReveal stagger delay={0.1}>

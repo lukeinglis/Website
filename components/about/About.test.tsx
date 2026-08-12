@@ -20,17 +20,16 @@ describe("About", () => {
 
   it("renders skills categories", () => {
     render(<About />);
-    expect(screen.getByText("Languages")).toBeInTheDocument();
-    expect(screen.getByText("AI/ML")).toBeInTheDocument();
-    expect(screen.getByText("Frameworks")).toBeInTheDocument();
-    expect(screen.getByText("Infrastructure")).toBeInTheDocument();
-    expect(screen.getByText("Tools")).toBeInTheDocument();
+    expect(screen.getByText("Focus Areas")).toBeInTheDocument();
+    expect(screen.getByText("Domains")).toBeInTheDocument();
+    expect(screen.getByText("Experience")).toBeInTheDocument();
+    expect(screen.getByText("Interests")).toBeInTheDocument();
   });
 
   it("renders skill items", () => {
     render(<About />);
-    expect(screen.getByText("Python")).toBeInTheDocument();
-    expect(screen.getByText("LLM Optimization")).toBeInTheDocument();
-    expect(screen.getByText("PyTorch")).toBeInTheDocument();
+    expect(screen.getByText("Inference-Time Scaling")).toBeInTheDocument();
+    expect(screen.getByText("Enterprise AI")).toBeInTheDocument();
+    expect(screen.getByText("IBM Research")).toBeInTheDocument();
   });
 });
