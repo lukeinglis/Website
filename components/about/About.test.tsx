@@ -18,18 +18,18 @@ describe("About", () => {
     expect(screen.getByRole("heading", { name: "About" })).toBeInTheDocument();
   });
 
-  it("renders skills categories", () => {
+  it("renders the timeline and work areas sections", () => {
     render(<About />);
-    expect(screen.getByText("Focus Areas")).toBeInTheDocument();
-    expect(screen.getByText("Domains")).toBeInTheDocument();
-    expect(screen.getByText("Experience")).toBeInTheDocument();
-    expect(screen.getByText("Interests")).toBeInTheDocument();
+    expect(screen.getByText("The path")).toBeInTheDocument();
+    expect(screen.getByText("What I work on")).toBeInTheDocument();
   });
 
-  it("renders skill items", () => {
+  it("renders timeline entries and work area items", () => {
     render(<About />);
+    expect(screen.getByText("Auburn University")).toBeInTheDocument();
+    expect(screen.getByText("IBM Research")).toBeInTheDocument();
+    expect(screen.getByText("Red Hat AI")).toBeInTheDocument();
     expect(screen.getByText("Inference-Time Scaling")).toBeInTheDocument();
     expect(screen.getByText("Enterprise AI")).toBeInTheDocument();
-    expect(screen.getByText("IBM Research")).toBeInTheDocument();
   });
 });

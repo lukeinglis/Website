@@ -7,7 +7,7 @@ const mockSetMode = vi.fn();
 vi.mock("@/app/providers/TimeThemeProvider", () => ({
   useTimeTheme: () => ({
     phase: "morning" as const,
-    season: "summer" as const,
+
     mode: "auto" as const,
     setMode: mockSetMode,
     reducedMotion: false,

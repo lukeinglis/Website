@@ -2,38 +2,34 @@
 
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 
-const skills = [
+const timeline = [
   {
-    category: "Focus Areas",
-    items: [
-      "Inference-Time Scaling",
-      "Post-Training Techniques",
-      "Model Customization",
-      "Continual Learning",
-    ],
+    label: "Auburn University",
+    detail: null,
   },
   {
-    category: "Domains",
-    items: ["Enterprise AI", "LLM Optimization", "AI Product Strategy"],
+    label: "IBM Research",
+    detail: "7 years · supported AI research orgs + MIT-IBM Watson AI Lab",
   },
   {
-    category: "Experience",
-    items: ["IBM Research", "MIT-IBM Watson AI Lab", "Red Hat AI Innovation Team"],
+    label: "Red Hat AI",
+    detail: "2025 · AI Innovation Team",
   },
-  {
-    category: "Interests",
-    items: [
-      "Smaller Fit-for-Purpose Models",
-      "AI Reliability & Adaptability",
-      "Cost-Effective AI Systems",
-    ],
-  },
+];
+
+const workAreas = [
+  "Inference-Time Scaling",
+  "Post-Training",
+  "Model Customization",
+  "Continual Learning",
+  "Enterprise AI",
+  "Cost-Effective Systems",
 ];
 
 export function About() {
   return (
     <section id="about" className="px-6 py-24">
-      <div className="mx-auto max-w-3xl">
+      <div className="mx-auto max-w-5xl">
         <ScrollReveal>
           <h2
             className="text-3xl font-bold tracking-tight sm:text-4xl"
@@ -42,74 +38,98 @@ export function About() {
             About
           </h2>
         </ScrollReveal>
-        <ScrollReveal delay={0.1}>
-          <div
-            className="mt-6 space-y-4 text-base leading-7 sm:text-lg"
-            style={{ color: "var(--text-secondary)" }}
-          >
-            <p>
-              I&apos;m a Technical Product Manager at Red Hat AI, working with
-              the AI Innovation Team to translate emerging research into
-              practical product capabilities. I&apos;m also hands-on — I build
-              tools, write code, and ship projects. My focus is bringing
-              inference-time scaling and post-training techniques into
-              enterprise AI platforms.
-            </p>
-            <p>
-              Before joining Red Hat in 2025, I spent nearly seven years at IBM
-              Research, supporting AI research organizations and large-scale
-              partnerships, including the MIT-IBM Watson AI Lab. In those roles,
-              I connected research, product strategy, operations, and customer
-              needs to accelerate the path from promising ideas to real-world
-              impact.
-            </p>
-            <p>
-              I&apos;m especially interested in how enterprises can improve the
-              reliability, adaptability, and cost-effectiveness of their AI
-              systems. My current work explores how to get more value from
-              smaller, fit-for-purpose models through inference-time scaling,
-              continual learning, and flexible approaches to model
-              customization. I studied at Auburn University.
-            </p>
-          </div>
-        </ScrollReveal>
-        <div className="mt-12">
-          <ScrollReveal>
-            <h3
-              className="text-xl font-semibold"
-              style={{ color: "var(--text-primary)" }}
+        <div className="mt-8 grid grid-cols-1 gap-12 md:grid-cols-2">
+          <ScrollReveal delay={0.1}>
+            <div
+              className="space-y-6 text-base leading-7 sm:text-lg"
+              style={{ color: "var(--text-secondary)" }}
             >
-              What I Focus On
-            </h3>
+              <p>
+                Most TPMs live in the gap between engineering and business. I
+                live in a different gap: between what researchers prove is
+                possible and what products actually ship.
+              </p>
+              <p>
+                At Red Hat, I work with the AI Innovation Team to bring
+                techniques like inference-time scaling and model customization
+                into products that enterprises rely on.
+              </p>
+              <p>
+                I also build things. This site, the projects below, the tools I
+                use to test ideas &mdash; if I can&apos;t prototype it, I
+                don&apos;t fully understand it yet.
+              </p>
+            </div>
           </ScrollReveal>
-          <ScrollReveal stagger delay={0.1}>
-            <dl className="mt-6 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {skills.map((group) => (
-                <div key={group.category}>
-                  <dt
-                    className="text-sm font-semibold uppercase tracking-wider"
-                    style={{ color: "var(--accent)" }}
-                  >
-                    {group.category}
-                  </dt>
-                  <dd className="mt-2 flex flex-wrap gap-2">
-                    {group.items.map((item) => (
-                      <span
-                        key={item}
-                        className="rounded-md px-2.5 py-1 text-sm"
-                        style={{
-                          backgroundColor: "var(--bg-secondary)",
-                          color: "var(--text-primary)",
-                        }}
-                      >
-                        {item}
-                      </span>
-                    ))}
-                  </dd>
-                </div>
-              ))}
-            </dl>
-          </ScrollReveal>
+          <div className="space-y-10">
+            <ScrollReveal delay={0.2}>
+              <div>
+                <h3
+                  className="text-sm font-semibold uppercase tracking-wider"
+                  style={{ color: "var(--accent)" }}
+                >
+                  The path
+                </h3>
+                <ol className="mt-4 space-y-4" aria-label="Career timeline">
+                  {timeline.map((step, i) => (
+                    <li key={step.label} className="relative flex gap-3">
+                      <div className="flex flex-col items-center">
+                        <span
+                          className="mt-1.5 h-2.5 w-2.5 rounded-full"
+                          style={{ backgroundColor: "var(--accent)" }}
+                          aria-hidden="true"
+                        />
+                        {i < timeline.length - 1 && (
+                          <span
+                            className="mt-1 w-px flex-1"
+                            style={{ backgroundColor: "var(--text-secondary)", opacity: 0.3 }}
+                            aria-hidden="true"
+                          />
+                        )}
+                      </div>
+                      <div className="pb-2">
+                        <p
+                          className="text-sm font-medium"
+                          style={{ color: "var(--text-primary)" }}
+                        >
+                          {step.label}
+                        </p>
+                        {step.detail && (
+                          <p
+                            className="mt-0.5 text-sm"
+                            style={{ color: "var(--text-secondary)" }}
+                          >
+                            {step.detail}
+                          </p>
+                        )}
+                      </div>
+                    </li>
+                  ))}
+                </ol>
+              </div>
+            </ScrollReveal>
+            <ScrollReveal delay={0.3}>
+              <div>
+                <h3
+                  className="text-sm font-semibold uppercase tracking-wider"
+                  style={{ color: "var(--accent)" }}
+                >
+                  What I work on
+                </h3>
+                <ul className="mt-4 space-y-2">
+                  {workAreas.map((area) => (
+                    <li
+                      key={area}
+                      className="text-sm"
+                      style={{ color: "var(--text-primary)" }}
+                    >
+                      {area}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </ScrollReveal>
+          </div>
         </div>
       </div>
     </section>

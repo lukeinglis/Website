@@ -16,7 +16,7 @@ describe("Contact", () => {
   it("renders the heading", () => {
     render(<Contact />);
     expect(
-      screen.getByRole("heading", { name: "Get in Touch" }),
+      screen.getByRole("heading", { name: "Say hello" }),
     ).toBeInTheDocument();
   });
 

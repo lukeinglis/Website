@@ -5,7 +5,7 @@ import { Hero } from "./Hero";
 vi.mock("@/app/providers/TimeThemeProvider", () => ({
   useTimeTheme: () => ({
     phase: "morning" as const,
-    season: "spring" as const,
+
     mode: "auto" as const,
     setMode: vi.fn(),
     reducedMotion: false,
@@ -41,7 +41,7 @@ describe("Hero", () => {
       "href",
       "#projects",
     );
-    expect(screen.getByText("Get in Touch")).toHaveAttribute(
+    expect(screen.getByText("Say hello")).toHaveAttribute(
       "href",
       "#contact",
     );

@@ -2,20 +2,18 @@
 
 import { Canvas } from "@react-three/fiber";
 import { Suspense, useCallback, useRef, useState } from "react";
-import type { Season, TimePhase } from "@/lib/time";
+import type { TimePhase } from "@/lib/time";
 import { ParticleField } from "./ParticleField";
 import { SkyGradient } from "./SkyGradient";
 
 interface BackgroundSceneProps {
   phase: TimePhase;
-  season: Season;
   particleColor: string;
   lowPower: boolean;
 }
 
 export function BackgroundScene({
   phase,
-  season,
   particleColor,
   lowPower,
 }: BackgroundSceneProps) {
@@ -53,7 +51,6 @@ export function BackgroundScene({
           <SkyGradient phase={phase} />
           <ParticleField
             phase={phase}
-            season={season}
             particleColor={particleColor}
             mousePosition={mousePos}
             lowPower={lowPower}

@@ -9,18 +9,12 @@ import {
   useState,
 } from "react";
 import { getThemeCssVars } from "@/lib/themes";
-import {
-  type Season,
-  type TimePhase,
-  getPhaseForHour,
-  getSeasonForDate,
-} from "@/lib/time";
+import { type TimePhase, getPhaseForHour } from "@/lib/time";
 
 export type ThemeMode = "auto" | TimePhase;
 
 interface TimeThemeContextValue {
   phase: TimePhase;
-  season: Season;
   mode: ThemeMode;
   setMode: (mode: ThemeMode) => void;
   reducedMotion: boolean;
@@ -84,8 +78,6 @@ export function TimeThemeProvider({
   );
   const [announcement, setAnnouncement] = useState("");
 
-  const season = useMemo(() => getSeasonForDate(new Date()), []);
-
   useEffect(() => {
     const msUntilNextHour =
       (60 - new Date().getMinutes()) * 60 * 1000 -
@@ -113,14 +105,13 @@ export function TimeThemeProvider({
   }, [mode, currentHour]);
 
   useEffect(() => {
-    const vars = getThemeCssVars(phase, season);
+    const vars = getThemeCssVars(phase);
     const root = document.documentElement;
     for (const [key, value] of Object.entries(vars)) {
       root.style.setProperty(key, value);
     }
     root.dataset.theme = phase;
-    root.dataset.season = season;
-  }, [phase, season]);
+  }, [phase]);
 
   useEffect(() => {
     if (reducedMotion) {
@@ -144,8 +135,8 @@ export function TimeThemeProvider({
   }, []);
 
   const value = useMemo(
-    () => ({ phase, season, mode, setMode, reducedMotion, setReducedMotion }),
-    [phase, season, mode, setMode, reducedMotion, setReducedMotion],
+    () => ({ phase, mode, setMode, reducedMotion, setReducedMotion }),
+    [phase, mode, setMode, reducedMotion, setReducedMotion],
   );
 
   return (
