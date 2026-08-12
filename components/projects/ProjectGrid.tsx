@@ -26,8 +26,8 @@ async function ProjectList() {
 
   return (
     <ProjectGridClient>
-      {repos.map((repo) => (
-        <ProjectCard key={repo.name} repo={repo} />
+      {repos.map((repo, index) => (
+        <ProjectCard key={repo.name} repo={repo} featured={index === 0} />
       ))}
     </ProjectGridClient>
   );
@@ -47,7 +47,7 @@ export async function ProjectGrid() {
           className="mt-4 text-base sm:text-lg"
           style={{ color: "var(--text-secondary)" }}
         >
-          Open source work and recent projects, pulled live from GitHub.
+          Things I&apos;ve built or am building.
         </p>
         <Suspense fallback={<ProjectGridSkeleton />}>
           <ProjectList />

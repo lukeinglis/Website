@@ -5,7 +5,7 @@ import { GenerativeBackground } from "./GenerativeBackground";
 vi.mock("@/app/providers/TimeThemeProvider", () => ({
   useTimeTheme: () => ({
     phase: "morning" as const,
-    season: "spring" as const,
+
     mode: "auto" as const,
     setMode: vi.fn(),
     reducedMotion: false,

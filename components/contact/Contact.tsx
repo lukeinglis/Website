@@ -44,7 +44,7 @@ export function Contact() {
             className="text-3xl font-bold tracking-tight sm:text-4xl"
             style={{ color: "var(--text-primary)" }}
           >
-            Get in Touch
+            Say hello
           </h2>
         </ScrollReveal>
         <ScrollReveal delay={0.1}>
@@ -52,7 +52,7 @@ export function Contact() {
             className="mt-4 text-base sm:text-lg"
             style={{ color: "var(--text-secondary)" }}
           >
-            Interested in working together or have a question? Reach out.
+            I&apos;m always happy to talk about AI, product, or interesting problems.
           </p>
         </ScrollReveal>
         <ScrollReveal delay={0.2}>

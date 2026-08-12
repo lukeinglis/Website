@@ -3,7 +3,7 @@
 import dynamic from "next/dynamic";
 import { useSyncExternalStore } from "react";
 import { useTimeTheme } from "@/app/providers/TimeThemeProvider";
-import { seasonalAccents } from "@/lib/themes";
+import { themes } from "@/lib/themes";
 
 const BackgroundScene = dynamic(
   () => import("./BackgroundScene").then((mod) => mod.BackgroundScene),
@@ -60,7 +60,7 @@ function CssGradientFallback() {
 }
 
 export function GenerativeBackground() {
-  const { phase, season, reducedMotion } = useTimeTheme();
+  const { phase, reducedMotion } = useTimeTheme();
 
   const canRender3D = useSyncExternalStore(
     subscribe,
@@ -77,12 +77,11 @@ export function GenerativeBackground() {
     return <CssGradientFallback />;
   }
 
-  const particleColor = seasonalAccents[season].particleColor;
+  const particleColor = themes[phase].particleColor;
 
   return (
     <BackgroundScene
       phase={phase}
-      season={season}
       particleColor={particleColor}
       lowPower={lowPower}
     />

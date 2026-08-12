@@ -3,7 +3,7 @@
 import { useRef, useState } from "react";
 import { useFrame } from "@react-three/fiber";
 import type { Points } from "three";
-import type { Season, TimePhase } from "@/lib/time";
+import type { TimePhase } from "@/lib/time";
 
 interface ParticleConfig {
   count: number;
@@ -29,7 +29,6 @@ interface ParticleData {
 function generateParticleData(
   count: number,
   config: ParticleConfig,
-  season: Season,
 ): ParticleData {
   const pos = new Float32Array(count * 3);
   const vel = new Float32Array(count * 3);
@@ -40,9 +39,8 @@ function generateParticleData(
     pos[i * 3 + 1] = (Math.random() - 0.5) * config.spread;
     pos[i * 3 + 2] = (Math.random() - 0.5) * config.spread * 0.5;
 
-    const seasonSpeed = getSeasonSpeedMultiplier(season);
     vel[i * 3] = (Math.random() - 0.5) * config.speed * 0.3;
-    vel[i * 3 + 1] = getSeasonYVelocity(season, config.speed * seasonSpeed);
+    vel[i * 3 + 1] = (Math.random() - 0.5) * config.speed * 0.2;
     vel[i * 3 + 2] = (Math.random() - 0.5) * config.speed * 0.1;
 
     sz[i] =
@@ -54,7 +52,6 @@ function generateParticleData(
 
 interface ParticleFieldProps {
   phase: TimePhase;
-  season: Season;
   particleColor: string;
   mousePosition: { x: number; y: number };
   lowPower: boolean;
@@ -62,7 +59,6 @@ interface ParticleFieldProps {
 
 export function ParticleField({
   phase,
-  season,
   particleColor,
   mousePosition,
   lowPower,
@@ -72,7 +68,7 @@ export function ParticleField({
   const count = lowPower ? Math.floor(config.count / 3) : config.count;
 
   const [data] = useState<ParticleData>(() =>
-    generateParticleData(count, config, season),
+    generateParticleData(count, config),
   );
 
   const frameSkip = useRef(0);
@@ -127,30 +123,4 @@ export function ParticleField({
       />
     </points>
   );
-}
-
-function getSeasonSpeedMultiplier(season: Season): number {
-  switch (season) {
-    case "winter":
-      return 0.5;
-    case "fall":
-      return 0.7;
-    case "spring":
-      return 0.9;
-    case "summer":
-      return 1.0;
-  }
-}
-
-function getSeasonYVelocity(season: Season, baseSpeed: number): number {
-  switch (season) {
-    case "winter":
-      return -Math.abs(baseSpeed) * 0.8;
-    case "fall":
-      return -Math.abs(baseSpeed) * 0.6;
-    case "spring":
-      return Math.abs(baseSpeed) * 0.4;
-    case "summer":
-      return (Math.random() - 0.5) * baseSpeed * 0.3;
-  }
 }

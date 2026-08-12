@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
-import { getThemeCssVars, seasonalAccents, themes } from "./themes";
-import type { Season, TimePhase } from "./time";
+import { getThemeCssVars, themes } from "./themes";
+import type { TimePhase } from "./time";
 
 const ALL_PHASES: TimePhase[] = [
   "dawn",
@@ -9,8 +9,6 @@ const ALL_PHASES: TimePhase[] = [
   "evening",
   "night",
 ];
-
-const ALL_SEASONS: Season[] = ["spring", "summer", "fall", "winter"];
 
 describe("themes", () => {
   it("defines a palette for every phase", () => {
@@ -33,29 +31,16 @@ describe("themes", () => {
       }
     }
   });
-});
 
-describe("seasonalAccents", () => {
-  it("defines accents for every season", () => {
-    for (const season of ALL_SEASONS) {
-      expect(seasonalAccents[season]).toBeDefined();
-      expect(seasonalAccents[season].accentSeasonal).toBeTruthy();
-      expect(seasonalAccents[season].particleColor).toBeTruthy();
-    }
-  });
-
-  it("all seasonal color values are valid hex codes", () => {
-    const hexRegex = /^#[0-9A-Fa-f]{6}$/;
-    for (const season of ALL_SEASONS) {
-      const accent = seasonalAccents[season];
-      expect(accent.accentSeasonal).toMatch(hexRegex);
-      expect(accent.particleColor).toMatch(hexRegex);
+  it("defines a particleColor for every phase", () => {
+    for (const phase of ALL_PHASES) {
+      expect(themes[phase].particleColor).toBeTruthy();
     }
   });
 });
 
 describe("getThemeCssVars", () => {
-  it("returns correct CSS variable names without season", () => {
+  it("returns correct CSS variable names", () => {
     const vars = getThemeCssVars("morning");
     expect(vars).toHaveProperty("--bg-primary");
     expect(vars).toHaveProperty("--bg-secondary");
@@ -74,22 +59,12 @@ describe("getThemeCssVars", () => {
     }
   });
 
-  it("includes seasonal vars when season is provided", () => {
-    const vars = getThemeCssVars("morning", "spring");
-    expect(vars["--accent-seasonal"]).toBe(
-      seasonalAccents.spring.accentSeasonal,
-    );
-    expect(vars["--particle-color"]).toBe(seasonalAccents.spring.particleColor);
-  });
-
-  it("all 20 phase×season combos produce valid CSS values", () => {
+  it("all 5 phases produce valid CSS values", () => {
     const hexRegex = /^#[0-9A-Fa-f]{6}$/;
     for (const phase of ALL_PHASES) {
-      for (const season of ALL_SEASONS) {
-        const vars = getThemeCssVars(phase, season);
-        for (const [key, value] of Object.entries(vars)) {
-          expect(value, `${phase}/${season} ${key}`).toMatch(hexRegex);
-        }
+      const vars = getThemeCssVars(phase);
+      for (const [key, value] of Object.entries(vars)) {
+        expect(value, `${phase} ${key}`).toMatch(hexRegex);
       }
     }
   });
