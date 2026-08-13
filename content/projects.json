@@ -1,42 +1,194 @@
 [
   {
     "name": "work-vault",
-    "description": "An AI-powered work vault built on Obsidian + Claude Code. Structured templates, automated workflows, and MCP integrations.",
+    "description": "An AI-powered work vault built on Obsidian + Claude Code. Structured templates, automated workflows, and MCP integrations for managing meetings, decisions, initiatives, and research.",
     "language": "Python",
     "stars": 5,
     "url": "https://github.com/lukeinglis/work-vault",
-    "updatedAt": "2026-08-01T00:00:00Z"
+    "updatedAt": "2026-07-13T18:45:35Z"
   },
   {
     "name": "its_hub_demo",
-    "description": "A Python library for inference-time scaling LLMs.",
+    "description": "A Python library for inference-time scaling LLMs",
     "language": "Python",
     "stars": 3,
     "url": "https://github.com/lukeinglis/its_hub_demo",
-    "updatedAt": "2026-08-01T00:00:00Z"
+    "updatedAt": "2026-03-31T02:21:24Z"
   },
   {
     "name": "CMD",
-    "description": "Connecting Models to Data.",
+    "description": "Connecting Models to Data",
     "language": "TypeScript",
     "stars": 2,
     "url": "https://github.com/lukeinglis/CMD",
-    "updatedAt": "2026-07-01T00:00:00Z"
+    "updatedAt": "2026-05-26T02:53:56Z"
+  },
+  {
+    "name": "f1-fantasy",
+    "description": "F1 Fantasy League for friends: pick a driver and constructor each race, use them wisely",
+    "language": "TypeScript",
+    "stars": 1,
+    "url": "https://github.com/lukeinglis/f1-fantasy",
+    "updatedAt": "2026-07-21T15:06:01Z"
+  },
+  {
+    "name": "WorldCupFantasy",
+    "description": "World Cup 2026 Fantasy prediction contest. Deployed at soccer.lukeinglis.me",
+    "language": "TypeScript",
+    "stars": 1,
+    "url": "https://github.com/lukeinglis/WorldCupFantasy",
+    "updatedAt": "2026-07-20T13:45:44Z"
+  },
+  {
+    "name": "FantasyFootball",
+    "description": "",
+    "language": "TypeScript",
+    "stars": 1,
+    "url": "https://github.com/lukeinglis/FantasyFootball",
+    "updatedAt": "2026-07-15T17:48:26Z"
+  },
+  {
+    "name": "its-strategy",
+    "description": "",
+    "language": "HTML",
+    "stars": 1,
+    "url": "https://github.com/lukeinglis/its-strategy",
+    "updatedAt": "2026-06-10T14:01:49Z"
+  },
+  {
+    "name": "Luke",
+    "description": "",
+    "language": "TypeScript",
+    "stars": 1,
+    "url": "https://github.com/lukeinglis/Luke",
+    "updatedAt": "2026-05-26T02:53:59Z"
   },
   {
     "name": "sdg_hub_luke",
-    "description": "Synthetic Data Generation Toolkit for LLMs.",
+    "description": "Synthetic Data Generation Toolkit for LLMs",
     "language": "JavaScript",
     "stars": 1,
     "url": "https://github.com/lukeinglis/sdg_hub_luke",
-    "updatedAt": "2026-07-01T00:00:00Z"
+    "updatedAt": "2026-05-26T02:53:58Z"
+  },
+  {
+    "name": "Homepage",
+    "description": "",
+    "language": "JavaScript",
+    "stars": 1,
+    "url": "https://github.com/lukeinglis/Homepage",
+    "updatedAt": "2026-05-26T02:53:51Z"
+  },
+  {
+    "name": "remote-factory",
+    "description": "Domain-agnostic multi-agent software design and evolution harness",
+    "language": null,
+    "stars": 1,
+    "url": "https://github.com/lukeinglis/remote-factory",
+    "updatedAt": "2026-05-26T02:53:48Z"
+  },
+  {
+    "name": "FantasyBaseball",
+    "description": "",
+    "language": "TypeScript",
+    "stars": 1,
+    "url": "https://github.com/lukeinglis/FantasyBaseball",
+    "updatedAt": "2026-05-12T20:25:17Z"
+  },
+  {
+    "name": "mini_trainer",
+    "description": "fast trainer for educational purposes",
+    "language": null,
+    "stars": 1,
+    "url": "https://github.com/lukeinglis/mini_trainer",
+    "updatedAt": "2026-04-28T14:56:30Z"
   },
   {
     "name": "hopscotch-luke",
-    "description": "Repo containing experimentation artifacts for the Hopscotch paper on skipping redundant attention blocks.",
-    "language": "Python",
+    "description": "Repo containing expreimentation artifacts for the Hopscotch paper on skipping redundant attention blocks.",
+    "language": null,
     "stars": 1,
     "url": "https://github.com/lukeinglis/hopscotch-luke",
-    "updatedAt": "2026-06-01T00:00:00Z"
+    "updatedAt": "2025-11-05T02:59:05Z"
+  },
+  {
+    "name": "Website",
+    "description": "Personal Website",
+    "language": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/lukeinglis/Website",
+    "updatedAt": "2026-08-13T19:37:43Z"
+  },
+  {
+    "name": "forecastbench",
+    "description": "",
+    "language": "Python",
+    "stars": 0,
+    "url": "https://github.com/lukeinglis/forecastbench",
+    "updatedAt": "2026-08-12T16:19:46Z"
+  },
+  {
+    "name": "forecastbench-parity",
+    "description": "",
+    "language": "Python",
+    "stars": 0,
+    "url": "https://github.com/lukeinglis/forecastbench-parity",
+    "updatedAt": "2026-08-10T16:33:49Z"
+  },
+  {
+    "name": "claude-hud",
+    "description": "A Claude Code plugin that shows what's happening - context usage, active tools, running agents, and todo progress",
+    "language": null,
+    "stars": 0,
+    "url": "https://github.com/lukeinglis/claude-hud",
+    "updatedAt": "2026-07-29T16:30:10Z"
+  },
+  {
+    "name": "games",
+    "description": "",
+    "language": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/lukeinglis/games",
+    "updatedAt": "2026-07-21T15:53:48Z"
+  },
+  {
+    "name": "knockout-tournament-template",
+    "description": "",
+    "language": "TypeScript",
+    "stars": 0,
+    "url": "https://github.com/lukeinglis/knockout-tournament-template",
+    "updatedAt": "2026-07-21T14:47:30Z"
+  },
+  {
+    "name": "lab64",
+    "description": "",
+    "language": "Shell",
+    "stars": 0,
+    "url": "https://github.com/lukeinglis/lab64",
+    "updatedAt": "2026-07-13T19:18:42Z"
+  },
+  {
+    "name": "gorilla",
+    "description": "Gorilla: Training and Evaluating LLMs for Function Calls (Tool Calls)",
+    "language": null,
+    "stars": 0,
+    "url": "https://github.com/lukeinglis/gorilla",
+    "updatedAt": "2026-06-30T16:12:02Z"
+  },
+  {
+    "name": "training_hub",
+    "description": "An algorithm-focused interface for common llm training, continual learning, and reinforcement learning techniques",
+    "language": null,
+    "stars": 0,
+    "url": "https://github.com/lukeinglis/training_hub",
+    "updatedAt": "2025-08-05T15:44:37Z"
+  },
+  {
+    "name": ".github",
+    "description": "",
+    "language": null,
+    "stars": 0,
+    "url": "https://github.com/lukeinglis/.github",
+    "updatedAt": "2025-07-25T20:10:35Z"
   }
 ]
