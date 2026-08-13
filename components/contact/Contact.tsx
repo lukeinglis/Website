@@ -37,7 +37,11 @@ const socialLinks = [
 
 export function Contact() {
   return (
-    <section id="contact" className="px-6 py-24">
+    <section
+      id="contact"
+      className="px-6 py-24"
+      style={{ backgroundColor: "#2E3440" }}
+    >
       <div className="mx-auto max-w-3xl text-center">
         <ScrollReveal>
           <h2
@@ -58,11 +62,11 @@ export function Contact() {
         </ScrollReveal>
         <ScrollReveal delay={0.2}>
           <a
-            href="mailto:hello@lukeinglis.me"
-            className="mt-8 inline-block rounded-lg px-8 py-3 text-base font-semibold text-white transition-opacity hover:opacity-90"
-            style={{ backgroundColor: "var(--accent)" }}
+            href="mailto:lukerichardinglis@gmail.com"
+            className="mt-8 inline-block font-mono text-base transition-opacity hover:opacity-80"
+            style={{ color: "var(--accent)" }}
           >
-            hello@lukeinglis.me
+            lukerichardinglis@gmail.com
           </a>
         </ScrollReveal>
         <ScrollReveal delay={0.3}>

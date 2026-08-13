@@ -18,6 +18,10 @@ vi.mock("@/components/projects/ProjectGrid", () => ({
   ProjectGrid: () => <section data-testid="projects">ProjectGrid</section>,
 }));
 
+vi.mock("@/components/interests/Interests", () => ({
+  Interests: () => <section data-testid="interests">Interests</section>,
+}));
+
 vi.mock("@/components/contact/Contact", () => ({
   Contact: () => <section data-testid="contact">Contact</section>,
 }));
@@ -37,6 +41,7 @@ describe("Home", () => {
     expect(screen.getByTestId("hero")).toBeInTheDocument();
     expect(screen.getByTestId("about")).toBeInTheDocument();
     expect(screen.getByTestId("projects")).toBeInTheDocument();
+    expect(screen.getByTestId("interests")).toBeInTheDocument();
     expect(screen.getByTestId("contact")).toBeInTheDocument();
     expect(screen.getByTestId("footer")).toBeInTheDocument();
   });

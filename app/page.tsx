@@ -2,6 +2,7 @@ import { Nav } from "@/components/navigation/Nav";
 import { Hero } from "@/components/hero/Hero";
 import { About } from "@/components/about/About";
 import { ProjectGrid } from "@/components/projects/ProjectGrid";
+import { Interests } from "@/components/interests/Interests";
 import { Contact } from "@/components/contact/Contact";
 import { Footer } from "@/components/footer/Footer";
 import { GenerativeBackground } from "@/components/background/GenerativeBackground";
@@ -13,7 +14,7 @@ const jsonLd = {
   url: "https://lukeinglis.me",
   sameAs: [
     "https://github.com/lukeinglis",
-    "https://linkedin.com/in/lukeinglis",
+    "https://www.linkedin.com/in/luke-inglis/",
   ],
   jobTitle: "Technical Product Manager",
 };
@@ -33,6 +34,7 @@ export default function Home() {
         <Hero />
         <About />
         <ProjectGrid />
+        <Interests />
         <Contact />
       </main>
       <Footer />

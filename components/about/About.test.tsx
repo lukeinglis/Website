@@ -24,12 +24,21 @@ describe("About", () => {
     expect(screen.getByText("What I work on")).toBeInTheDocument();
   });
 
-  it("renders timeline entries and work area items", () => {
+  it("renders timeline entries with details", () => {
     render(<About />);
     expect(screen.getByText("Auburn University")).toBeInTheDocument();
+    expect(
+      screen.getByText("Sports Information / Media Relations"),
+    ).toBeInTheDocument();
     expect(screen.getByText("IBM Research")).toBeInTheDocument();
     expect(screen.getByText("Red Hat AI")).toBeInTheDocument();
+  });
+
+  it("renders work area items", () => {
+    render(<About />);
     expect(screen.getByText("Inference-Time Scaling")).toBeInTheDocument();
+    expect(screen.getByText("Post-Training Techniques")).toBeInTheDocument();
     expect(screen.getByText("Enterprise AI")).toBeInTheDocument();
+    expect(screen.getByText("Cost-Effective AI Systems")).toBeInTheDocument();
   });
 });

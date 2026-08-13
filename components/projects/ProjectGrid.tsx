@@ -35,7 +35,11 @@ async function ProjectList() {
 
 export async function ProjectGrid() {
   return (
-    <section id="projects" className="px-6 py-24">
+    <section
+      id="projects"
+      className="px-6 py-24"
+      style={{ backgroundColor: "#2E3440" }}
+    >
       <div className="mx-auto max-w-5xl">
         <h2
           className="font-serif text-3xl font-semibold tracking-tight sm:text-4xl"

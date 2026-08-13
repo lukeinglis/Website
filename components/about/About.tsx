@@ -5,11 +5,11 @@ import { ScrollReveal } from "@/components/ui/ScrollReveal";
 const timeline = [
   {
     label: "Auburn University",
-    detail: null,
+    detail: "Sports Information / Media Relations",
   },
   {
     label: "IBM Research",
-    detail: "7 years · supported AI research orgs + MIT-IBM Watson AI Lab",
+    detail: "7 years · MIT-IBM Watson AI Lab",
   },
   {
     label: "Red Hat AI",
@@ -19,16 +19,20 @@ const timeline = [
 
 const workAreas = [
   "Inference-Time Scaling",
-  "Post-Training",
+  "Post-Training Techniques",
   "Model Customization",
   "Continual Learning",
   "Enterprise AI",
-  "Cost-Effective Systems",
+  "Cost-Effective AI Systems",
 ];
 
 export function About() {
   return (
-    <section id="about" className="px-6 py-24">
+    <section
+      id="about"
+      className="px-6 py-24"
+      style={{ backgroundColor: "#2E3440" }}
+    >
       <div className="mx-auto max-w-5xl">
         <ScrollReveal>
           <h2
@@ -82,24 +86,21 @@ export function About() {
                         {i < timeline.length - 1 && (
                           <span
                             className="mt-1 w-px flex-1"
-                            style={{
-                              backgroundColor: "var(--text-secondary)",
-                              opacity: 0.3,
-                            }}
+                            style={{ backgroundColor: "#4C566A" }}
                             aria-hidden="true"
                           />
                         )}
                       </div>
                       <div className="pb-2">
                         <p
-                          className="text-sm font-medium"
+                          className="text-sm font-medium font-sans"
                           style={{ color: "var(--text-primary)" }}
                         >
                           {step.label}
                         </p>
                         {step.detail && (
                           <p
-                            className="mt-0.5 text-sm"
+                            className="mt-0.5 font-mono text-sm"
                             style={{ color: "var(--text-secondary)" }}
                           >
                             {step.detail}
@@ -124,7 +125,7 @@ export function About() {
                     <li
                       key={area}
                       className="text-sm"
-                      style={{ color: "var(--text-primary)" }}
+                      style={{ color: "#D8DEE9" }}
                     >
                       {area}
                     </li>

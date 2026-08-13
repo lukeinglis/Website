@@ -1,6 +1,6 @@
 const socialLinks = [
   { name: "GitHub", url: "https://github.com/lukeinglis" },
-  { name: "LinkedIn", url: "https://linkedin.com/in/lukeinglis" },
+  { name: "LinkedIn", url: "https://www.linkedin.com/in/luke-inglis/" },
 ];
 
 export function Footer() {
@@ -8,6 +8,7 @@ export function Footer() {
     <footer
       className="border-t px-6 py-8"
       style={{
+        backgroundColor: "#2E3440",
         borderColor:
           "color-mix(in srgb, var(--text-secondary) 20%, transparent)",
       }}
