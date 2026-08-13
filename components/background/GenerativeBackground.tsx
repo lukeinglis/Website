@@ -1,12 +1,12 @@
 "use client";
 
 import dynamic from "next/dynamic";
-import { useSyncExternalStore } from "react";
+import { useCallback, useEffect, useRef, useSyncExternalStore } from "react";
 import { useTimeTheme } from "@/app/providers/TimeThemeProvider";
-import { themes } from "@/lib/themes";
 
-const BackgroundScene = dynamic(
-  () => import("./BackgroundScene").then((mod) => mod.BackgroundScene),
+const HarborScene = dynamic(
+  () =>
+    import("@/components/harbor/HarborScene").then((mod) => mod.HarborScene),
   { ssr: false },
 );
 
@@ -51,7 +51,7 @@ function CssGradientFallback() {
       style={{
         zIndex: -1,
         background:
-          "linear-gradient(to bottom, var(--bg-secondary), var(--bg-primary))",
+          "linear-gradient(135deg, #2E3440 0%, #3B4252 40%, #434C5E 70%, #2E3440 100%)",
         transition: "background 300ms ease",
       }}
       aria-hidden="true"
@@ -61,6 +61,8 @@ function CssGradientFallback() {
 
 export function GenerativeBackground() {
   const { phase, reducedMotion } = useTimeTheme();
+  const containerRef = useRef<HTMLDivElement>(null);
+  const opacityRef = useRef(1);
 
   const canRender3D = useSyncExternalStore(
     subscribe,
@@ -73,17 +75,34 @@ export function GenerativeBackground() {
     getLowPowerServer,
   );
 
+  const handleScroll = useCallback(() => {
+    if (!containerRef.current) return;
+    const vh = window.innerHeight;
+    const scrollY = window.scrollY;
+    const newOpacity = Math.max(0, 1 - scrollY / vh);
+    if (Math.abs(newOpacity - opacityRef.current) > 0.01) {
+      opacityRef.current = newOpacity;
+      containerRef.current.style.opacity = String(newOpacity);
+    }
+  }, []);
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [handleScroll]);
+
   if (reducedMotion || !canRender3D) {
     return <CssGradientFallback />;
   }
 
-  const particleColor = themes[phase].particleColor;
-
   return (
-    <BackgroundScene
-      phase={phase}
-      particleColor={particleColor}
-      lowPower={lowPower}
-    />
+    <div
+      ref={containerRef}
+      className="fixed inset-0 hero-scene-container"
+      style={{ zIndex: -1 }}
+      aria-hidden="true"
+    >
+      <HarborScene phase={phase} lowPower={lowPower} />
+    </div>
   );
 }
