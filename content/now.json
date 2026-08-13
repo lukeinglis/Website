@@ -5,18 +5,9 @@
       "title": "Inference-time scaling for enterprise LLMs",
       "context": "Red Hat AI"
     },
-    { "title": "This website", "context": "Side project" }
+    { "title": "lukeinglis.me redesign", "context": "Side project" }
   ],
-  "reading": [
-    { "title": "Thinking, Fast and Slow", "author": "Daniel Kahneman" }
-  ],
-  "watching": [
-    { "title": "Severance", "season": "S3", "service": "Apple TV+" }
-  ],
-  "cooking": [
-    {
-      "title": "Braised short ribs over Parmesan polenta",
-      "source": "NYT Cooking"
-    }
-  ]
+  "reading": [],
+  "watching": [],
+  "cooking": []
 }

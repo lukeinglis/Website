@@ -28,39 +28,22 @@ describe("Now", () => {
     expect(screen.getByText(/Updated 2026-08-13/)).toBeInTheDocument();
   });
 
-  it("renders subsection headings", () => {
+  it("renders working on heading and items", () => {
     render(<Now />);
     expect(screen.getByText("Working on")).toBeInTheDocument();
-    expect(screen.getByText("Reading")).toBeInTheDocument();
-    expect(screen.getByText("Watching")).toBeInTheDocument();
-    expect(screen.getByText("Cooking")).toBeInTheDocument();
-  });
-
-  it("renders working items with context", () => {
-    render(<Now />);
     expect(
       screen.getByText("Inference-time scaling for enterprise LLMs"),
     ).toBeInTheDocument();
     expect(screen.getByText("Red Hat AI")).toBeInTheDocument();
+    expect(screen.getByText("lukeinglis.me redesign")).toBeInTheDocument();
+    expect(screen.getByText("Side project")).toBeInTheDocument();
   });
 
-  it("renders reading items with author", () => {
+  it("hides empty categories", () => {
     render(<Now />);
-    expect(screen.getByText("Thinking, Fast and Slow")).toBeInTheDocument();
-    expect(screen.getByText("Daniel Kahneman")).toBeInTheDocument();
-  });
-
-  it("renders watching items with season and service", () => {
-    render(<Now />);
-    expect(screen.getByText("Severance")).toBeInTheDocument();
-  });
-
-  it("renders cooking items with source", () => {
-    render(<Now />);
-    expect(
-      screen.getByText("Braised short ribs over Parmesan polenta"),
-    ).toBeInTheDocument();
-    expect(screen.getByText("NYT Cooking")).toBeInTheDocument();
+    expect(screen.queryByText("Reading")).not.toBeInTheDocument();
+    expect(screen.queryByText("Watching")).not.toBeInTheDocument();
+    expect(screen.queryByText("Cooking")).not.toBeInTheDocument();
   });
 
   it("has the correct section id", () => {

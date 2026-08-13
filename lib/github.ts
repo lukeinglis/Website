@@ -31,7 +31,7 @@ export async function fetchGitHubRepos(): Promise<GitHubRepo[]> {
   }
 
   const response = await fetch(
-    `https://api.github.com/users/${GITHUB_USERNAME}/repos?per_page=30&sort=updated&direction=desc`,
+    `https://api.github.com/users/${GITHUB_USERNAME}/repos?per_page=100&sort=updated&direction=desc`,
     { headers, next: { revalidate: 3600 } },
   );
 
@@ -42,7 +42,7 @@ export async function fetchGitHubRepos(): Promise<GitHubRepo[]> {
   const repos: GitHubApiRepo[] = await response.json();
 
   return repos
-    .filter((repo) => !repo.fork && !repo.archived)
+    .filter((repo) => !repo.archived)
     .sort((a, b) => b.stargazers_count - a.stargazers_count)
     .map((repo) => ({
       name: repo.name,
