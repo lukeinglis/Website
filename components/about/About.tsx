@@ -5,7 +5,7 @@ import { ScrollReveal } from "@/components/ui/ScrollReveal";
 const timeline = [
   {
     label: "Auburn University",
-    detail: "Sports Information / Media Relations",
+    detail: "Sports Media Relations (undergrad)",
   },
   {
     label: "IBM Research",
@@ -55,8 +55,8 @@ export function About() {
                 Research, including time with the MIT-IBM Watson AI Lab.
               </p>
               <p>
-                I got my start in sports media relations at Auburn before moving
-                into tech.
+                I studied at Auburn, where I worked in sports media relations
+                before moving into tech.
               </p>
             </div>
           </ScrollReveal>
