@@ -49,19 +49,14 @@ export function About() {
               style={{ color: "var(--text-secondary)" }}
             >
               <p>
-                Most TPMs live in the gap between engineering and business. I
-                live in a different gap: between what researchers prove is
-                possible and what products actually ship.
+                I&apos;m a Technical Product Manager at Red Hat, working with
+                the AI Innovation Team on inference-time scaling and
+                post-training techniques. Before that I spent seven years at IBM
+                Research, including time with the MIT-IBM Watson AI Lab.
               </p>
               <p>
-                At Red Hat, I work with the AI Innovation Team to bring
-                techniques like inference-time scaling and model customization
-                into products that enterprises rely on.
-              </p>
-              <p>
-                I also build things. This site, the projects below, the tools I
-                use to test ideas &mdash; if I can&apos;t prototype it, I
-                don&apos;t fully understand it yet.
+                I got my start in sports media relations at Auburn before moving
+                into tech.
               </p>
             </div>
           </ScrollReveal>
