@@ -5,21 +5,11 @@ import { GenerativeBackground } from "./GenerativeBackground";
 vi.mock("@/app/providers/TimeThemeProvider", () => ({
   useTimeTheme: () => ({
     phase: "morning" as const,
-
     mode: "auto" as const,
     setMode: vi.fn(),
     reducedMotion: false,
     setReducedMotion: vi.fn(),
   }),
-}));
-
-vi.mock("next/dynamic", () => ({
-  __esModule: true,
-  default: () => {
-    const MockScene = () => <div data-testid="background-scene">3D Scene</div>;
-    MockScene.displayName = "MockScene";
-    return MockScene;
-  },
 }));
 
 describe("GenerativeBackground", () => {
@@ -28,20 +18,10 @@ describe("GenerativeBackground", () => {
     expect(document.querySelector("[aria-hidden]")).toBeTruthy();
   });
 
-  it("renders CSS fallback when WebGL is unavailable", () => {
-    const originalCreateElement = document.createElement.bind(document);
-    vi.spyOn(document, "createElement").mockImplementation((tag: string) => {
-      const el = originalCreateElement(tag);
-      if (tag === "canvas") {
-        (el as HTMLCanvasElement).getContext = () => null;
-      }
-      return el;
-    });
-
+  it("renders the harbor scene with correct aria label", () => {
     render(<GenerativeBackground />);
-    const fallback = document.querySelector("[aria-hidden='true']");
-    expect(fallback).toBeTruthy();
-
-    vi.restoreAllMocks();
+    const scene = document.querySelector("[role='img']");
+    expect(scene).toBeTruthy();
+    expect(scene?.getAttribute("aria-label")).toContain("Boston Harbor");
   });
 });
