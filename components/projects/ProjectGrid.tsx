@@ -38,7 +38,7 @@ export async function ProjectGrid() {
     <section id="projects" className="px-6 py-24">
       <div className="mx-auto max-w-5xl">
         <h2
-          className="text-3xl font-bold tracking-tight sm:text-4xl"
+          className="font-serif text-3xl font-semibold tracking-tight sm:text-4xl"
           style={{ color: "var(--text-primary)" }}
         >
           Projects

@@ -41,7 +41,7 @@ export function Contact() {
       <div className="mx-auto max-w-3xl text-center">
         <ScrollReveal>
           <h2
-            className="text-3xl font-bold tracking-tight sm:text-4xl"
+            className="font-serif text-3xl font-semibold tracking-tight sm:text-4xl"
             style={{ color: "var(--text-primary)" }}
           >
             Say hello
@@ -52,7 +52,8 @@ export function Contact() {
             className="mt-4 text-base sm:text-lg"
             style={{ color: "var(--text-secondary)" }}
           >
-            I&apos;m always happy to talk about AI, product, or interesting problems.
+            I&apos;m always happy to talk about AI, product, or interesting
+            problems.
           </p>
         </ScrollReveal>
         <ScrollReveal delay={0.2}>

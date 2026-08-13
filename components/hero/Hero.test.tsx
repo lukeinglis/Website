@@ -41,9 +41,6 @@ describe("Hero", () => {
       "href",
       "#projects",
     );
-    expect(screen.getByText("Say hello")).toHaveAttribute(
-      "href",
-      "#contact",
-    );
+    expect(screen.getByText("Say hello")).toHaveAttribute("href", "#contact");
   });
 });

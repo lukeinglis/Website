@@ -32,7 +32,7 @@ export function About() {
       <div className="mx-auto max-w-5xl">
         <ScrollReveal>
           <h2
-            className="text-3xl font-bold tracking-tight sm:text-4xl"
+            className="font-serif text-3xl font-semibold tracking-tight sm:text-4xl"
             style={{ color: "var(--text-primary)" }}
           >
             About
@@ -65,7 +65,7 @@ export function About() {
             <ScrollReveal delay={0.2}>
               <div>
                 <h3
-                  className="text-sm font-semibold uppercase tracking-wider"
+                  className="font-mono text-xs font-semibold uppercase tracking-widest"
                   style={{ color: "var(--accent)" }}
                 >
                   The path
@@ -82,7 +82,10 @@ export function About() {
                         {i < timeline.length - 1 && (
                           <span
                             className="mt-1 w-px flex-1"
-                            style={{ backgroundColor: "var(--text-secondary)", opacity: 0.3 }}
+                            style={{
+                              backgroundColor: "var(--text-secondary)",
+                              opacity: 0.3,
+                            }}
                             aria-hidden="true"
                           />
                         )}
@@ -111,7 +114,7 @@ export function About() {
             <ScrollReveal delay={0.3}>
               <div>
                 <h3
-                  className="text-sm font-semibold uppercase tracking-wider"
+                  className="font-mono text-xs font-semibold uppercase tracking-widest"
                   style={{ color: "var(--accent)" }}
                 >
                   What I work on
