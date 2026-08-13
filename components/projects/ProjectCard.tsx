@@ -28,13 +28,12 @@ export function ProjectCard({ repo, featured = false }: ProjectCardProps) {
 
   const card = (
     <article
-      className={`flex flex-col rounded-xl border transition-shadow duration-200 ${
+      className={`flex flex-col rounded-xl border transition-all duration-200 hover:brightness-110 ${
         featured ? "p-8" : "p-6"
       }`}
       style={{
-        borderColor:
-          "color-mix(in srgb, var(--text-secondary) 20%, transparent)",
-        backgroundColor: "var(--bg-secondary)",
+        borderColor: "#4C566A",
+        backgroundColor: "#3B4252",
       }}
     >
       <h3

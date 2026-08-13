@@ -11,6 +11,7 @@ import { getMotionTransition } from "@/lib/animations";
 const links = [
   { href: "#about", label: "About" },
   { href: "#projects", label: "Projects" },
+  { href: "#interests", label: "Interests" },
   { href: "#contact", label: "Contact" },
 ];
 

@@ -23,9 +23,12 @@ describe("Contact", () => {
   it("renders email link", () => {
     render(<Contact />);
     const emailLink = screen.getByRole("link", {
-      name: "hello@lukeinglis.me",
+      name: "lukerichardinglis@gmail.com",
     });
-    expect(emailLink).toHaveAttribute("href", "mailto:hello@lukeinglis.me");
+    expect(emailLink).toHaveAttribute(
+      "href",
+      "mailto:lukerichardinglis@gmail.com",
+    );
   });
 
   it("renders social links", () => {

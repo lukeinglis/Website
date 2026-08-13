@@ -17,7 +17,7 @@ describe("Footer", () => {
     );
     expect(screen.getByText("LinkedIn")).toHaveAttribute(
       "href",
-      "https://linkedin.com/in/lukeinglis",
+      "https://www.linkedin.com/in/luke-inglis/",
     );
   });
 });
