@@ -16,10 +16,9 @@ function formatDate(dateStr: string): string {
 
 interface ProjectCardProps {
   repo: GitHubRepo;
-  featured?: boolean;
 }
 
-export function ProjectCard({ repo, featured = false }: ProjectCardProps) {
+export function ProjectCard({ repo }: ProjectCardProps) {
   const { phase, reducedMotion } = useTimeTheme();
   const transition = getMotionTransition(phase);
   const langColor = repo.language
@@ -28,16 +27,14 @@ export function ProjectCard({ repo, featured = false }: ProjectCardProps) {
 
   const card = (
     <article
-      className={`flex flex-col rounded-xl border transition-all duration-200 hover:brightness-110 ${
-        featured ? "p-8" : "p-6"
-      }`}
+      className="flex flex-col rounded-xl border p-6 transition-all duration-200 hover:brightness-110"
       style={{
         borderColor: "#4C566A",
         backgroundColor: "#3B4252",
       }}
     >
       <h3
-        className={`font-serif font-semibold ${featured ? "text-xl" : "text-lg"}`}
+        className="font-serif text-lg font-semibold"
         style={{ color: "var(--accent)" }}
       >
         <a
@@ -51,7 +48,7 @@ export function ProjectCard({ repo, featured = false }: ProjectCardProps) {
       </h3>
       {repo.description && (
         <p
-          className={`mt-2 flex-1 leading-6 ${featured ? "text-base" : "text-sm"}`}
+          className="mt-2 flex-1 text-sm leading-6"
           style={{ color: "var(--text-secondary)" }}
         >
           {repo.description}

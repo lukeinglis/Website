@@ -26,8 +26,8 @@ async function ProjectList() {
 
   return (
     <ProjectGridClient>
-      {repos.map((repo, index) => (
-        <ProjectCard key={repo.name} repo={repo} featured={index === 0} />
+      {repos.map((repo) => (
+        <ProjectCard key={repo.name} repo={repo} />
       ))}
     </ProjectGridClient>
   );
