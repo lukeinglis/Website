@@ -2,6 +2,7 @@ import { Nav } from "@/components/navigation/Nav";
 import { Hero } from "@/components/hero/Hero";
 import { About } from "@/components/about/About";
 import { ProjectGrid } from "@/components/projects/ProjectGrid";
+import { Now } from "@/components/now/Now";
 import { Interests } from "@/components/interests/Interests";
 import { Contact } from "@/components/contact/Contact";
 import { Footer } from "@/components/footer/Footer";
@@ -34,6 +35,7 @@ export default function Home() {
         <Hero />
         <About />
         <ProjectGrid />
+        <Now />
         <Interests />
         <Contact />
       </main>
