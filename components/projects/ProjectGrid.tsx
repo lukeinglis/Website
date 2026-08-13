@@ -1,39 +1,18 @@
-import { Suspense } from "react";
 import type { GitHubRepo } from "@/lib/github";
-import { fetchGitHubRepos } from "@/lib/github";
 import fallbackProjects from "@/content/projects.json";
 import { ProjectCard } from "./ProjectCard";
-import { ProjectGridSkeleton } from "@/components/ui/ProjectCardSkeleton";
 import { ProjectGridClient } from "./ProjectGridClient";
 
-async function getProjects(): Promise<GitHubRepo[]> {
-  try {
-    return await fetchGitHubRepos();
-  } catch {
-    return fallbackProjects.map((p) => ({
-      name: p.name,
-      description: p.description,
-      language: p.language,
-      stars: p.stars,
-      url: p.url,
-      updatedAt: p.updatedAt,
-    }));
-  }
-}
+const projects: GitHubRepo[] = fallbackProjects.map((p) => ({
+  name: p.name,
+  description: p.description,
+  language: p.language,
+  stars: p.stars,
+  url: p.url,
+  updatedAt: p.updatedAt,
+}));
 
-async function ProjectList() {
-  const repos = await getProjects();
-
-  return (
-    <ProjectGridClient>
-      {repos.map((repo) => (
-        <ProjectCard key={repo.name} repo={repo} />
-      ))}
-    </ProjectGridClient>
-  );
-}
-
-export async function ProjectGrid() {
+export function ProjectGrid() {
   return (
     <section
       id="projects"
@@ -53,9 +32,11 @@ export async function ProjectGrid() {
         >
           Things I&apos;ve built or am building.
         </p>
-        <Suspense fallback={<ProjectGridSkeleton />}>
-          <ProjectList />
-        </Suspense>
+        <ProjectGridClient>
+          {projects.map((repo) => (
+            <ProjectCard key={repo.name} repo={repo} />
+          ))}
+        </ProjectGridClient>
       </div>
     </section>
   );
