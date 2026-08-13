@@ -59,13 +59,14 @@ describe("fetchGitHubRepos", () => {
     );
 
     const repos = await fetchGitHubRepos();
-    expect(repos).toHaveLength(2);
-    expect(repos[0].name).toBe("repo-a");
-    expect(repos[0].stars).toBe(10);
-    expect(repos[1].name).toBe("repo-b");
+    expect(repos).toHaveLength(3);
+    expect(repos[0].name).toBe("forked-repo");
+    expect(repos[0].stars).toBe(100);
+    expect(repos[1].name).toBe("repo-a");
+    expect(repos[2].name).toBe("repo-b");
   });
 
-  it("filters out forks and archived repos", async () => {
+  it("includes forks but filters out archived repos", async () => {
     vi.stubGlobal(
       "fetch",
       vi.fn().mockResolvedValue({
@@ -76,7 +77,7 @@ describe("fetchGitHubRepos", () => {
 
     const repos = await fetchGitHubRepos();
     const names = repos.map((r) => r.name);
-    expect(names).not.toContain("forked-repo");
+    expect(names).toContain("forked-repo");
     expect(names).not.toContain("archived-repo");
   });
 
