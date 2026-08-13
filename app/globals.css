@@ -83,6 +83,20 @@ body::after {
   animation: shimmer 1.5s ease-in-out infinite;
 }
 
+#hero h1,
+#hero p {
+  text-shadow: 0 2px 12px rgba(46, 52, 64, 0.8);
+}
+
+#hero a {
+  box-shadow: 0 2px 8px rgba(46, 52, 64, 0.4);
+}
+
+.hero-scene-container {
+  will-change: opacity;
+  transition: opacity 50ms linear;
+}
+
 .reduce-motion *,
 .reduce-motion *::before,
 .reduce-motion *::after {

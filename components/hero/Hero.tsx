@@ -60,7 +60,7 @@ export function Hero() {
   return (
     <section
       id="hero"
-      className="flex min-h-[80vh] flex-col items-start justify-center px-6 py-24"
+      className="relative flex min-h-screen flex-col items-start justify-center px-6 py-24"
     >
       <div className="mx-auto w-full max-w-5xl">
         <div className="grid grid-cols-1 items-start gap-8 md:grid-cols-2 md:gap-12">
