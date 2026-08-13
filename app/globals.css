@@ -85,7 +85,7 @@ body::after {
 
 #hero h1,
 #hero p {
-  text-shadow: 0 2px 12px rgba(46, 52, 64, 0.8);
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
 }
 
 #hero a {
@@ -105,178 +105,60 @@ body::after {
   overflow: hidden;
 }
 
-.harbor-sky-layer {
+/* Image crossfade layers */
+.harbor-image-layer {
   position: absolute;
   inset: 0;
-  background: var(--sky-gradient);
-  transition: background 2s ease;
+  opacity: 0;
+  transition: opacity 2s ease-in-out;
 }
 
-.harbor-stars-layer {
-  position: absolute;
-  inset: 0;
-  transition: opacity 2s ease;
-  pointer-events: none;
+.harbor-image-layer.harbor-image-active {
+  opacity: 1;
 }
 
-.harbor-celestial-layer {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  transition: opacity 2s ease;
-}
-
-.harbor-celestial-layer svg circle {
-  transition:
-    cx 2s ease,
-    cy 2s ease,
-    fill 2s ease;
-}
-
-.harbor-skyline-container {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 60%;
-  pointer-events: none;
-}
-
-.harbor-skyline-layer {
-  width: 100%;
-  height: 100%;
-}
-
-.harbor-skyline-fill {
-  transition: fill 2s ease;
-}
-
-.harbor-skyline-edge {
-  transition: opacity 2s ease;
-}
-
-.harbor-water-layer {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 38%;
-  transition: background-color 2s ease;
-}
-
-.harbor-reflection-layer {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 35%;
-  transform: scaleY(-1);
-  opacity: 0.12;
-  filter: blur(4px);
-  pointer-events: none;
-}
-
-.harbor-boats-container {
-  position: absolute;
-  bottom: 8%;
-  left: 0;
-  right: 0;
-  height: 25%;
-  pointer-events: none;
-}
-
-.harbor-boats-layer {
-  width: 100%;
-  height: 100%;
-}
-
-.harbor-foreground-container {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 12%;
-  pointer-events: none;
-}
-
-/* Boat drift animations */
-@keyframes boat-drift-1 {
-  from {
-    transform: translateX(-10%);
-  }
-  to {
-    transform: translateX(110%);
-  }
-}
-
-@keyframes boat-drift-2 {
-  from {
-    transform: translateX(110%);
-  }
-  to {
-    transform: translateX(-10%);
-  }
-}
-
-@keyframes boat-drift-3 {
-  from {
-    transform: translateX(-15%);
-  }
-  to {
-    transform: translateX(115%);
-  }
-}
-
-@keyframes boat-bob {
-  0%,
-  100% {
-    transform: translateY(0);
+/* Ken Burns zoom */
+@keyframes ken-burns {
+  0% {
+    transform: scale(1);
   }
   50% {
-    transform: translateY(3px);
+    transform: scale(1.03);
   }
-}
-
-.harbor-boat {
-  animation: boat-bob 3.5s ease-in-out infinite;
-}
-
-.harbor-boat-1 {
-  animation:
-    boat-drift-1 70s linear infinite,
-    boat-bob 3.5s ease-in-out infinite;
-}
-
-.harbor-boat-2 {
-  animation:
-    boat-drift-2 90s linear infinite,
-    boat-bob 4s ease-in-out infinite;
-}
-
-.harbor-boat-3 {
-  animation:
-    boat-drift-3 110s linear infinite,
-    boat-bob 3s ease-in-out infinite;
-}
-
-/* Star twinkle */
-@keyframes star-twinkle {
-  0%,
   100% {
-    opacity: 0.4;
-  }
-  50% {
-    opacity: 1;
+    transform: scale(1);
   }
 }
 
-.harbor-star {
-  animation: star-twinkle 3s ease-in-out infinite;
+.harbor-ken-burns.harbor-image-active {
+  animation: ken-burns 30s ease-in-out infinite;
 }
 
-/* Window lights subtle flicker */
-.harbor-window-lights rect {
-  transition: opacity 2s ease;
+/* Vignette overlay */
+.harbor-vignette {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse at center,
+    transparent 50%,
+    rgba(0, 0, 0, 0.35) 100%
+  );
+  pointer-events: none;
+}
+
+/* Bottom gradient for text readability */
+.harbor-bottom-gradient {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 40%;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(46, 52, 64, 0.6) 100%
+  );
+  pointer-events: none;
 }
 
 .reduce-motion *,
@@ -296,5 +178,9 @@ body::after {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+  }
+
+  .harbor-ken-burns {
+    animation: none !important;
   }
 }
