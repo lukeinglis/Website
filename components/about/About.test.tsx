@@ -28,7 +28,7 @@ describe("About", () => {
     render(<About />);
     expect(screen.getByText("Auburn University")).toBeInTheDocument();
     expect(
-      screen.getByText("Sports Media Relations (undergrad)"),
+      screen.getByText("Sports Information & Media Relations"),
     ).toBeInTheDocument();
     expect(screen.getByText("IBM Research")).toBeInTheDocument();
     expect(screen.getByText("Red Hat AI")).toBeInTheDocument();
