@@ -38,7 +38,7 @@ export function ProjectCard({ repo, featured = false }: ProjectCardProps) {
       }}
     >
       <h3
-        className={`font-semibold ${featured ? "text-xl" : "text-lg"}`}
+        className={`font-serif font-semibold ${featured ? "text-xl" : "text-lg"}`}
         style={{ color: "var(--accent)" }}
       >
         <a
@@ -58,7 +58,7 @@ export function ProjectCard({ repo, featured = false }: ProjectCardProps) {
           {repo.description}
         </p>
       )}
-      <div className="mt-4 flex items-center gap-4 text-xs">
+      <div className="mt-4 flex items-center gap-4 font-mono text-xs">
         {langColor && (
           <span className="flex items-center gap-1.5">
             <span

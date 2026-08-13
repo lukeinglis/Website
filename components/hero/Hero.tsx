@@ -66,14 +66,14 @@ export function Hero() {
         <div className="grid grid-cols-1 items-start gap-8 md:grid-cols-2 md:gap-12">
           <div>
             <p
-              className="text-lg font-medium tracking-wide animate-fade-in"
+              className="font-mono text-sm tracking-widest uppercase animate-fade-in"
               style={{ color: "var(--accent)" }}
             >
               {greeting}
             </p>
             <h1
               ref={headingRef}
-              className="mt-2 text-5xl font-bold tracking-tight sm:text-6xl lg:text-7xl"
+              className="mt-2 font-serif text-5xl font-semibold tracking-tight sm:text-6xl lg:text-7xl"
               style={{ color: "var(--text-primary)" }}
             >
               Luke Inglis
@@ -107,9 +107,7 @@ export function Hero() {
               </a>
             </div>
           </div>
-          <div
-            className="flex items-start pt-2 md:pt-8"
-          >
+          <div className="flex items-start pt-2 md:pt-8">
             <p
               className="text-xl leading-8 sm:text-2xl animate-fade-in"
               style={{ color: "var(--text-secondary)", animationDelay: "0.6s" }}
