@@ -1,16 +1,9 @@
-import type { GitHubRepo } from "@/lib/github";
-import fallbackProjects from "@/content/projects.json";
+import type { ProjectCategory } from "@/lib/github";
+import projectsData from "@/content/projects.json";
 import { ProjectCard } from "./ProjectCard";
 import { ProjectGridClient } from "./ProjectGridClient";
 
-const projects: GitHubRepo[] = fallbackProjects.map((p) => ({
-  name: p.name,
-  description: p.description,
-  language: p.language,
-  stars: p.stars,
-  url: p.url,
-  updatedAt: p.updatedAt,
-}));
+const categories: ProjectCategory[] = projectsData.categories;
 
 export function ProjectGrid() {
   return (
@@ -32,11 +25,21 @@ export function ProjectGrid() {
         >
           Things I&apos;ve built or am building.
         </p>
-        <ProjectGridClient>
-          {projects.map((repo) => (
-            <ProjectCard key={repo.name} repo={repo} />
-          ))}
-        </ProjectGridClient>
+        {categories.map((category, idx) => (
+          <div key={category.name} className={idx === 0 ? "mt-10" : "mt-12"}>
+            <h3
+              className="font-mono text-xs font-semibold uppercase tracking-widest"
+              style={{ color: "var(--accent)" }}
+            >
+              {category.name}
+            </h3>
+            <ProjectGridClient>
+              {category.projects.map((project) => (
+                <ProjectCard key={project.name} project={project} />
+              ))}
+            </ProjectGridClient>
+          </div>
+        ))}
       </div>
     </section>
   );
