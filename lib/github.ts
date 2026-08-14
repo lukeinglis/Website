@@ -7,6 +7,19 @@ export interface GitHubRepo {
   updatedAt: string;
 }
 
+export interface Project {
+  name: string;
+  description: string;
+  language: string | null;
+  url: string | null;
+  stars: number;
+}
+
+export interface ProjectCategory {
+  name: string;
+  projects: Project[];
+}
+
 interface GitHubApiRepo {
   name: string;
   description: string | null;

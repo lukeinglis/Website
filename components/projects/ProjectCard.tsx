@@ -1,29 +1,34 @@
 "use client";
 
 import { motion } from "framer-motion";
-import type { GitHubRepo } from "@/lib/github";
+import type { Project } from "@/lib/github";
 import { languageColors } from "@/lib/github";
 import { useTimeTheme } from "@/app/providers/TimeThemeProvider";
 import { getMotionTransition } from "@/lib/animations";
 
-function formatDate(dateStr: string): string {
-  const date = new Date(dateStr);
-  return date.toLocaleDateString("en-US", {
-    month: "short",
-    year: "numeric",
-  });
-}
-
 interface ProjectCardProps {
-  repo: GitHubRepo;
+  project: Project;
 }
 
-export function ProjectCard({ repo }: ProjectCardProps) {
+export function ProjectCard({ project }: ProjectCardProps) {
   const { phase, reducedMotion } = useTimeTheme();
   const transition = getMotionTransition(phase);
-  const langColor = repo.language
-    ? (languageColors[repo.language] ?? "var(--text-secondary)")
+  const langColor = project.language
+    ? (languageColors[project.language] ?? "var(--text-secondary)")
     : null;
+
+  const title = project.url ? (
+    <a
+      href={project.url}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="hover:underline"
+    >
+      {project.name}
+    </a>
+  ) : (
+    project.name
+  );
 
   const card = (
     <article
@@ -33,25 +38,18 @@ export function ProjectCard({ repo }: ProjectCardProps) {
         backgroundColor: "#3B4252",
       }}
     >
-      <h3
+      <h4
         className="font-serif text-lg font-semibold"
         style={{ color: "var(--accent)" }}
       >
-        <a
-          href={repo.url}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="hover:underline"
-        >
-          {repo.name}
-        </a>
-      </h3>
-      {repo.description && (
+        {title}
+      </h4>
+      {project.description && (
         <p
           className="mt-2 flex-1 text-sm leading-6"
           style={{ color: "var(--text-secondary)" }}
         >
-          {repo.description}
+          {project.description}
         </p>
       )}
       <div className="mt-4 flex items-center gap-4 font-mono text-xs">
@@ -62,11 +60,11 @@ export function ProjectCard({ repo }: ProjectCardProps) {
               style={{ backgroundColor: langColor }}
             />
             <span style={{ color: "var(--text-secondary)" }}>
-              {repo.language}
+              {project.language}
             </span>
           </span>
         )}
-        {repo.stars > 0 && (
+        {project.stars > 0 && (
           <span
             className="flex items-center gap-1"
             style={{ color: "var(--text-secondary)" }}
@@ -80,12 +78,9 @@ export function ProjectCard({ repo }: ProjectCardProps) {
             >
               <path d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25z" />
             </svg>
-            {repo.stars}
+            {project.stars}
           </span>
         )}
-        <span style={{ color: "var(--text-secondary)" }}>
-          Updated {formatDate(repo.updatedAt)}
-        </span>
       </div>
     </article>
   );
