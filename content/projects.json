@@ -25,7 +25,7 @@
     {
       "name": "Personal",
       "projects": [
-        { "name": "Reel Palate", "description": "", "language": null, "url": null, "stars": 0 },
+        { "name": "Reel Palate", "description": "", "language": null, "url": "https://reelpalate.lukeinglis.me", "stars": 0 },
         { "name": "Website", "description": "This site — a time-aware personal website", "language": "TypeScript", "url": "https://github.com/lukeinglis/Website", "stars": 0 },
         { "name": "Homepage", "description": "Personal dashboard", "language": "JavaScript", "url": "https://github.com/lukeinglis/Homepage", "stars": 1 },
         { "name": "Games", "description": "", "language": "TypeScript", "url": "https://github.com/lukeinglis/games", "stars": 0 },
