@@ -34,13 +34,11 @@ interface NowData {
 
 const data: NowData = nowData;
 
-const ACCENT = "#88C0D0";
-
 function SubsectionHeading({ children }: { children: React.ReactNode }) {
   return (
     <h3
       className="font-mono text-sm font-medium uppercase tracking-wider"
-      style={{ color: ACCENT }}
+      style={{ color: "var(--accent)" }}
     >
       {children}
     </h3>
@@ -57,7 +55,7 @@ export function Now() {
     <section
       id="now"
       className="px-6 py-24"
-      style={{ backgroundColor: "#2E3440" }}
+      style={{ backgroundColor: "var(--bg-primary)" }}
     >
       <div className="mx-auto max-w-5xl">
         <ScrollReveal>
@@ -69,12 +67,12 @@ export function Now() {
           </h2>
         </ScrollReveal>
         <ScrollReveal delay={0.1}>
-          <p className="mt-4 text-base sm:text-lg" style={{ color: "#D8DEE9" }}>
+          <p className="mt-4 text-base sm:text-lg" style={{ color: "var(--text-secondary)" }}>
             What I&apos;m up to lately.
           </p>
         </ScrollReveal>
         <ScrollReveal delay={0.15}>
-          <p className="mt-2 font-mono text-sm" style={{ color: "#4C566A" }}>
+          <p className="mt-2 font-mono text-sm" style={{ color: "var(--border)" }}>
             Updated {data.lastUpdated}
           </p>
         </ScrollReveal>

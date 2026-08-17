@@ -5,6 +5,7 @@ export interface ThemePalette {
   bgSecondary: string;
   textPrimary: string;
   textSecondary: string;
+  border: string;
   accent: string;
   particleColor: string;
 }
@@ -15,6 +16,7 @@ export const themes: Record<TimePhase, ThemePalette> = {
     bgSecondary: "#3B4252",
     textPrimary: "#ECEFF4",
     textSecondary: "#D8DEE9",
+    border: "#4C566A",
     accent: "#D08770",
     particleColor: "#D08770",
   },
@@ -23,6 +25,7 @@ export const themes: Record<TimePhase, ThemePalette> = {
     bgSecondary: "#3B4252",
     textPrimary: "#ECEFF4",
     textSecondary: "#D8DEE9",
+    border: "#4C566A",
     accent: "#88C0D0",
     particleColor: "#88C0D0",
   },
@@ -31,6 +34,7 @@ export const themes: Record<TimePhase, ThemePalette> = {
     bgSecondary: "#3B4252",
     textPrimary: "#ECEFF4",
     textSecondary: "#D8DEE9",
+    border: "#4C566A",
     accent: "#EBCB8B",
     particleColor: "#EBCB8B",
   },
@@ -39,6 +43,7 @@ export const themes: Record<TimePhase, ThemePalette> = {
     bgSecondary: "#3B4252",
     textPrimary: "#E5E9F0",
     textSecondary: "#D8DEE9",
+    border: "#4C566A",
     accent: "#B48EAD",
     particleColor: "#B48EAD",
   },
@@ -47,6 +52,7 @@ export const themes: Record<TimePhase, ThemePalette> = {
     bgSecondary: "#3B4252",
     textPrimary: "#D8DEE9",
     textSecondary: "#D8DEE9",
+    border: "#4C566A",
     accent: "#5E81AC",
     particleColor: "#5E81AC",
   },
@@ -59,6 +65,7 @@ export function getThemeCssVars(phase: TimePhase): Record<string, string> {
     "--bg-secondary": palette.bgSecondary,
     "--text-primary": palette.textPrimary,
     "--text-secondary": palette.textSecondary,
+    "--border": palette.border,
     "--accent": palette.accent,
   };
 }

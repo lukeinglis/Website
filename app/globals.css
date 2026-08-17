@@ -9,6 +9,7 @@
   --text-primary: #eceff4;
   --text-secondary: #d8dee9;
   --accent: #88c0d0;
+  --border: #4c566a;
   --accent-seasonal: #a3be8c;
   --particle-color: #88c0d0;
   --background: var(--bg-primary);
@@ -47,9 +48,9 @@ body::after {
 }
 
 .glass {
-  background: rgba(46, 52, 64, 0.7);
+  background: color-mix(in srgb, var(--bg-primary) 70%, transparent);
   backdrop-filter: blur(14px);
-  border: 1px solid rgba(76, 86, 106, 0.3);
+  border: 1px solid color-mix(in srgb, var(--border) 30%, transparent);
 }
 
 @keyframes fade-in {

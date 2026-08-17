@@ -34,8 +34,8 @@ export function ProjectCard({ project }: ProjectCardProps) {
     <article
       className="flex flex-col rounded-xl border p-6 transition-all duration-200 hover:brightness-110"
       style={{
-        borderColor: "#4C566A",
-        backgroundColor: "#3B4252",
+        borderColor: "var(--border)",
+        backgroundColor: "var(--bg-secondary)",
       }}
     >
       <h4

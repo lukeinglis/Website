@@ -14,7 +14,7 @@ export function Interests() {
     <section
       id="interests"
       className="px-6 py-24"
-      style={{ backgroundColor: "#2E3440" }}
+      style={{ backgroundColor: "var(--bg-primary)" }}
     >
       <div className="mx-auto max-w-5xl">
         <ScrollReveal>
@@ -40,7 +40,7 @@ export function Interests() {
               key={team.name}
               className="rounded-xl p-6"
               style={{
-                backgroundColor: "#3B4252",
+                backgroundColor: "var(--bg-secondary)",
                 borderLeft: `3px solid ${team.accent}`,
               }}
             >
