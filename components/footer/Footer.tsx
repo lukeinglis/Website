@@ -8,7 +8,7 @@ export function Footer() {
     <footer
       className="border-t px-6 py-8"
       style={{
-        backgroundColor: "#2E3440",
+        backgroundColor: "var(--bg-primary)",
         borderColor:
           "color-mix(in srgb, var(--text-secondary) 20%, transparent)",
       }}

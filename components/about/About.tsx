@@ -31,7 +31,7 @@ export function About() {
     <section
       id="about"
       className="px-6 py-24"
-      style={{ backgroundColor: "#2E3440" }}
+      style={{ backgroundColor: "var(--bg-primary)" }}
     >
       <div className="mx-auto max-w-5xl">
         <ScrollReveal>
@@ -81,7 +81,7 @@ export function About() {
                         {i < timeline.length - 1 && (
                           <span
                             className="mt-1 w-px flex-1"
-                            style={{ backgroundColor: "#4C566A" }}
+                            style={{ backgroundColor: "var(--border)" }}
                             aria-hidden="true"
                           />
                         )}
@@ -120,7 +120,7 @@ export function About() {
                     <li
                       key={area}
                       className="text-sm"
-                      style={{ color: "#D8DEE9" }}
+                      style={{ color: "var(--text-secondary)" }}
                     >
                       {area}
                     </li>

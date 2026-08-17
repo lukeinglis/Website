@@ -40,7 +40,7 @@ export function Contact() {
     <section
       id="contact"
       className="px-6 py-24"
-      style={{ backgroundColor: "#2E3440" }}
+      style={{ backgroundColor: "var(--bg-primary)" }}
     >
       <div className="mx-auto max-w-3xl text-center">
         <ScrollReveal>
