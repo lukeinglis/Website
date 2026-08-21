@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 
 const timeline = [
@@ -26,6 +27,17 @@ const workAreas = [
   "Stakeholder Alignment",
 ];
 
+const galleryPhotos = [
+  { src: "/images/gallery/photo-1.jpg", alt: "" },
+  { src: "/images/gallery/photo-2.jpg", alt: "" },
+  { src: "/images/gallery/photo-3.jpg", alt: "" },
+  { src: "/images/gallery/photo-4.jpg", alt: "" },
+  { src: "/images/gallery/photo-5.jpg", alt: "" },
+  { src: "/images/gallery/photo-6.jpg", alt: "" },
+  { src: "/images/gallery/photo-7.jpg", alt: "" },
+  { src: "/images/gallery/photo-8.jpg", alt: "" },
+];
+
 export function About() {
   return (
     <section
@@ -42,8 +54,22 @@ export function About() {
             About
           </h2>
         </ScrollReveal>
-        <div className="mt-8 grid grid-cols-1 gap-12 md:grid-cols-2">
+
+        <div className="mt-8 grid grid-cols-1 gap-12 md:grid-cols-[240px_1fr]">
           <ScrollReveal delay={0.1}>
+            <div className="flex justify-center md:justify-start">
+              <Image
+                src="/images/headshot.png"
+                alt="Luke Inglis"
+                width={240}
+                height={240}
+                className="rounded-2xl"
+                style={{ objectFit: "cover" }}
+                priority
+              />
+            </div>
+          </ScrollReveal>
+          <ScrollReveal delay={0.15}>
             <div
               className="space-y-6 text-base leading-7 sm:text-lg"
               style={{ color: "var(--text-secondary)" }}
@@ -120,76 +146,98 @@ export function About() {
               </p>
             </div>
           </ScrollReveal>
-          <div className="space-y-10">
-            <ScrollReveal delay={0.2}>
-              <div>
-                <h3
-                  className="font-mono text-xs font-semibold uppercase tracking-widest"
-                  style={{ color: "var(--accent)" }}
-                >
-                  The path
-                </h3>
-                <ol className="mt-4 space-y-4" aria-label="Career timeline">
-                  {timeline.map((step, i) => (
-                    <li key={step.label} className="relative flex gap-3">
-                      <div className="flex flex-col items-center">
+        </div>
+
+        <div className="mt-16 grid grid-cols-1 gap-12 md:grid-cols-2">
+          <ScrollReveal delay={0.2}>
+            <div>
+              <h3
+                className="font-mono text-xs font-semibold uppercase tracking-widest"
+                style={{ color: "var(--accent)" }}
+              >
+                The path
+              </h3>
+              <ol className="mt-4 space-y-4" aria-label="Career timeline">
+                {timeline.map((step, i) => (
+                  <li key={step.label} className="relative flex gap-3">
+                    <div className="flex flex-col items-center">
+                      <span
+                        className="mt-1.5 h-2.5 w-2.5 rounded-full"
+                        style={{ backgroundColor: "var(--accent)" }}
+                        aria-hidden="true"
+                      />
+                      {i < timeline.length - 1 && (
                         <span
-                          className="mt-1.5 h-2.5 w-2.5 rounded-full"
-                          style={{ backgroundColor: "var(--accent)" }}
+                          className="mt-1 w-px flex-1"
+                          style={{ backgroundColor: "var(--border)" }}
                           aria-hidden="true"
                         />
-                        {i < timeline.length - 1 && (
-                          <span
-                            className="mt-1 w-px flex-1"
-                            style={{ backgroundColor: "var(--border)" }}
-                            aria-hidden="true"
-                          />
-                        )}
-                      </div>
-                      <div className="pb-2">
+                      )}
+                    </div>
+                    <div className="pb-2">
+                      <p
+                        className="text-sm font-medium font-sans"
+                        style={{ color: "var(--text-primary)" }}
+                      >
+                        {step.label}
+                      </p>
+                      {step.detail && (
                         <p
-                          className="text-sm font-medium font-sans"
-                          style={{ color: "var(--text-primary)" }}
+                          className="mt-0.5 font-mono text-sm"
+                          style={{ color: "var(--text-secondary)" }}
                         >
-                          {step.label}
+                          {step.detail}
                         </p>
-                        {step.detail && (
-                          <p
-                            className="mt-0.5 font-mono text-sm"
-                            style={{ color: "var(--text-secondary)" }}
-                          >
-                            {step.detail}
-                          </p>
-                        )}
-                      </div>
-                    </li>
-                  ))}
-                </ol>
-              </div>
-            </ScrollReveal>
-            <ScrollReveal delay={0.3}>
-              <div>
-                <h3
-                  className="font-mono text-xs font-semibold uppercase tracking-widest"
-                  style={{ color: "var(--accent)" }}
-                >
-                  What I work on
-                </h3>
-                <ul className="mt-4 space-y-2">
-                  {workAreas.map((area) => (
-                    <li
-                      key={area}
-                      className="text-sm"
-                      style={{ color: "var(--text-secondary)" }}
-                    >
-                      {area}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </ScrollReveal>
-          </div>
+                      )}
+                    </div>
+                  </li>
+                ))}
+              </ol>
+            </div>
+          </ScrollReveal>
+          <ScrollReveal delay={0.3}>
+            <div>
+              <h3
+                className="font-mono text-xs font-semibold uppercase tracking-widest"
+                style={{ color: "var(--accent)" }}
+              >
+                What I work on
+              </h3>
+              <ul className="mt-4 space-y-2">
+                {workAreas.map((area) => (
+                  <li
+                    key={area}
+                    className="text-sm"
+                    style={{ color: "var(--text-secondary)" }}
+                  >
+                    {area}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </ScrollReveal>
         </div>
+
+        <ScrollReveal delay={0.35}>
+          <div className="mt-16 -mx-6 overflow-x-auto scrollbar-hide">
+            <div className="flex gap-4 px-6" style={{ width: "max-content" }}>
+              {galleryPhotos.map((photo) => (
+                <div
+                  key={photo.src}
+                  className="relative h-64 w-80 flex-shrink-0 overflow-hidden rounded-xl"
+                >
+                  <Image
+                    src={photo.src}
+                    alt={photo.alt}
+                    fill
+                    sizes="320px"
+                    style={{ objectFit: "cover" }}
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+        </ScrollReveal>
       </div>
     </section>
   );
