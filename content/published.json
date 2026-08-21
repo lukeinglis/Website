@@ -1,0 +1,63 @@
+{
+  "blogs": [
+    {
+      "title": "Inference-time scaling on Red Hat AI: Improving model reliability",
+      "publication": "Red Hat Developer",
+      "url": "https://developers.redhat.com/articles/2026/07/31/inference-time-scaling-red-hat-ai-improving-model-reliability#"
+    }
+  ],
+  "papers": [
+    {
+      "title": "Unveiling the secret recipe: A guide for supervised fine-tuning small LLMs",
+      "publication": "ICLR 2025",
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=ns85oisAAAAJ&citation_for_view=ns85oisAAAAJ:u5HHmVD_uO8C"
+    },
+    {
+      "title": "Granite 3.0 Language Models",
+      "publication": "Rivista AI",
+      "url": "https://www.rivista.ai/wp-content/uploads/2024/10/paper-1.pdf"
+    }
+  ],
+  "articles": [
+    {
+      "title": "A new way to collaboratively customize LLMs",
+      "publication": "IBM Research",
+      "url": "https://research.ibm.com/blog/instruct-lab"
+    },
+    {
+      "title": "Democratizing Large Language Model development with InstructLab support in watsonx.ai",
+      "publication": "IBM",
+      "url": "https://www.ibm.com/new/announcements/democratizing-large-language-model-development-with-instructlab-support-in-watsonx-ai"
+    },
+    {
+      "title": "IBM and Red Hat Partner To Launch InstructLab for LLM Customization",
+      "publication": "CIO Tech Outlook",
+      "url": "https://www.ciotechoutlook.com/news/ibm-and-red-hat-partner-to-launch-instructlab-for-llm-customization-nid-12362-cid-58.html"
+    },
+    {
+      "title": "LAB: Large-Scale Alignment for ChatBots",
+      "publication": "arXiv",
+      "url": "https://arxiv.org/abs/2403.01081"
+    },
+    {
+      "title": "Researchers from IBM and MIT Introduce LAB: A Novel AI Method for LLM Training",
+      "publication": "MarkTechPost",
+      "url": "https://www.marktechpost.com/2024/03/19/researchers-from-ibm-and-mit-introduce-lab-a-novel-ai-method-designed-to-overcome-the-scalability-challenges-in-the-instruction-tuning-phase-of-large-language-model-llm-training/"
+    },
+    {
+      "title": "IBM Patents a Faster Method to Train LLMs for Enterprises",
+      "publication": "HPC Wire",
+      "url": "https://www.hpcwire.com/bigdatawire/2024/04/08/ibm-patents-a-faster-method-to-train-llms-for-enterprises/"
+    },
+    {
+      "title": "STAR: A Benchmark for Situated Reasoning in Real-World Videos",
+      "publication": "arXiv",
+      "url": "https://arxiv.org/html/2405.09711v1"
+    },
+    {
+      "title": "IBM Research Cambridge: A New State of the Art Research Lab",
+      "publication": "IBM Research",
+      "url": "https://research.ibm.com/labs/cambridge"
+    }
+  ]
+}

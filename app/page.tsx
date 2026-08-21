@@ -4,6 +4,7 @@ import { About } from "@/components/about/About";
 import { ProjectGrid } from "@/components/projects/ProjectGrid";
 import { Now } from "@/components/now/Now";
 import { Interests } from "@/components/interests/Interests";
+import { Published } from "@/components/published/Published";
 import { Contact } from "@/components/contact/Contact";
 import { Footer } from "@/components/footer/Footer";
 import { GenerativeBackground } from "@/components/background/GenerativeBackground";
@@ -37,6 +38,7 @@ export default function Home() {
         <ProjectGrid />
         <Now />
         <Interests />
+        <Published />
         <Contact />
       </main>
       <Footer />

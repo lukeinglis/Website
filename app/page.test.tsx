@@ -26,6 +26,10 @@ vi.mock("@/components/interests/Interests", () => ({
   Interests: () => <section data-testid="interests">Interests</section>,
 }));
 
+vi.mock("@/components/published/Published", () => ({
+  Published: () => <section data-testid="published">Published</section>,
+}));
+
 vi.mock("@/components/contact/Contact", () => ({
   Contact: () => <section data-testid="contact">Contact</section>,
 }));
