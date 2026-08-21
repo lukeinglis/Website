@@ -7,12 +7,13 @@ const teams = [
   { name: "Baltimore Orioles", league: "MLB", accent: "#DF4601" },
   { name: "Chelsea FC", league: "Premier League", accent: "#034694" },
   { name: "Minnesota Timberwolves", league: "NBA", accent: "#0C2340" },
+  { name: "Tampa Bay Buccaneers", league: "NFL", accent: "#D50A0A" },
 ];
 
 const otherInterests = [
-  { name: "Movies & TV", detail: "Always watching something" },
-  { name: "Cooking", detail: "Serious home cook" },
-  { name: "Video Games", detail: "When there's time" },
+  { name: "Movies & TV" },
+  { name: "Cooking" },
+  { name: "Video Games" },
 ];
 
 export function Interests() {
@@ -86,12 +87,6 @@ export function Interests() {
                   style={{ color: "var(--text-primary)" }}
                 >
                   {interest.name}
-                </p>
-                <p
-                  className="mt-1 font-mono text-xs"
-                  style={{ color: "var(--text-secondary)" }}
-                >
-                  {interest.detail}
                 </p>
               </div>
             </ScrollReveal>
