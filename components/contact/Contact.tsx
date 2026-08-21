@@ -56,8 +56,7 @@ export function Contact() {
             className="mt-4 text-base sm:text-lg"
             style={{ color: "var(--text-secondary)" }}
           >
-            I&apos;m always happy to talk about AI, product, or interesting
-            problems.
+            I&apos;m always happy to talk.
           </p>
         </ScrollReveal>
         <ScrollReveal delay={0.2}>
