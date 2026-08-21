@@ -1,5 +1,6 @@
 "use client";
 
+import { useCallback, useEffect, useState } from "react";
 import Image from "next/image";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 
@@ -39,6 +40,19 @@ const galleryPhotos = [
 ];
 
 export function About() {
+  const [lightbox, setLightbox] = useState<string | null>(null);
+
+  const closeLightbox = useCallback(() => setLightbox(null), []);
+
+  useEffect(() => {
+    if (!lightbox) return;
+    function onKey(e: KeyboardEvent) {
+      if (e.key === "Escape") setLightbox(null);
+    }
+    document.addEventListener("keydown", onKey);
+    return () => document.removeEventListener("keydown", onKey);
+  }, [lightbox]);
+
   return (
     <section
       id="about"
@@ -222,9 +236,12 @@ export function About() {
           <div className="mt-16 -mx-6 overflow-x-auto scrollbar-hide">
             <div className="flex gap-4 px-6" style={{ width: "max-content" }}>
               {galleryPhotos.map((photo) => (
-                <div
+                <button
                   key={photo.src}
-                  className="relative h-64 w-80 flex-shrink-0 overflow-hidden rounded-xl"
+                  className="relative h-64 w-80 flex-shrink-0 overflow-hidden rounded-xl cursor-pointer transition-opacity hover:opacity-80"
+                  onClick={() => setLightbox(photo.src)}
+                  type="button"
+                  aria-label="Expand photo"
                 >
                   <Image
                     src={photo.src}
@@ -233,12 +250,41 @@ export function About() {
                     sizes="320px"
                     style={{ objectFit: "cover" }}
                   />
-                </div>
+                </button>
               ))}
             </div>
           </div>
         </ScrollReveal>
       </div>
+
+      {lightbox && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center p-6"
+          style={{ backgroundColor: "rgba(0, 0, 0, 0.85)" }}
+          onClick={closeLightbox}
+          role="dialog"
+          aria-modal="true"
+          aria-label="Expanded photo"
+        >
+          <button
+            className="absolute top-6 right-6 text-white text-3xl cursor-pointer transition-opacity hover:opacity-70"
+            onClick={closeLightbox}
+            type="button"
+            aria-label="Close"
+          >
+            &times;
+          </button>
+          <div className="relative max-h-[90vh] max-w-[90vw]">
+            <Image
+              src={lightbox}
+              alt=""
+              width={1200}
+              height={900}
+              style={{ objectFit: "contain", maxHeight: "90vh", width: "auto" }}
+            />
+          </div>
+        </div>
+      )}
     </section>
   );
 }
