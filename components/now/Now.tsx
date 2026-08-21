@@ -1,8 +1,4 @@
-"use client";
-
-import { useEffect, useState } from "react";
-import { ScrollReveal } from "@/components/ui/ScrollReveal";
-import type { RecentActivity } from "@/lib/github";
+import { type RecentActivity, fetchRecentActivity } from "@/lib/github";
 
 function formatRelativeTime(timestamp: string): string {
   const now = Date.now();
@@ -48,19 +44,13 @@ function eventLabel(type: string): string {
   }
 }
 
-export function Now() {
-  const [activity, setActivity] = useState<RecentActivity[]>([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    fetch("/api/github/activity")
-      .then((res) => res.json())
-      .then((data) => {
-        setActivity(data);
-        setLoading(false);
-      })
-      .catch(() => setLoading(false));
-  }, []);
+export async function Now() {
+  let activity: RecentActivity[];
+  try {
+    activity = await fetchRecentActivity();
+  } catch {
+    activity = [];
+  }
 
   return (
     <section
@@ -69,73 +59,58 @@ export function Now() {
       style={{ backgroundColor: "var(--bg-primary)" }}
     >
       <div className="mx-auto max-w-5xl">
-        <ScrollReveal>
-          <h2
-            className="font-serif text-3xl font-semibold tracking-tight sm:text-4xl"
-            style={{ color: "var(--text-primary)" }}
-          >
-            Now
-          </h2>
-        </ScrollReveal>
-        <ScrollReveal delay={0.1}>
-          <p
-            className="mt-4 text-base sm:text-lg"
-            style={{ color: "var(--text-secondary)" }}
-          >
-            What I&apos;ve been working on lately.
-          </p>
-        </ScrollReveal>
+        <h2
+          className="font-serif text-3xl font-semibold tracking-tight sm:text-4xl"
+          style={{ color: "var(--text-primary)" }}
+        >
+          Now
+        </h2>
+        <p
+          className="mt-4 text-base sm:text-lg"
+          style={{ color: "var(--text-secondary)" }}
+        >
+          What I&apos;ve been working on lately.
+        </p>
 
-        <ScrollReveal delay={0.2}>
-          <div className="mt-10">
-            <h3
-              className="font-mono text-sm font-medium uppercase tracking-wider"
-              style={{ color: "var(--accent)" }}
+        <div className="mt-10">
+          <h3
+            className="font-mono text-sm font-medium uppercase tracking-wider"
+            style={{ color: "var(--accent)" }}
+          >
+            Recent activity
+          </h3>
+          {activity.length > 0 ? (
+            <ul className="mt-4 space-y-3">
+              {activity.map((item) => (
+                <li key={item.repo} className="flex items-baseline gap-3">
+                  <a
+                    href={`https://github.com/lukeinglis/${item.repo}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-sans text-base transition-opacity hover:opacity-70"
+                    style={{ color: "var(--text-primary)" }}
+                  >
+                    {item.repo}
+                  </a>
+                  <span
+                    className="font-mono text-xs"
+                    style={{ color: "var(--text-secondary)" }}
+                  >
+                    {eventLabel(item.type)}{" "}
+                    {formatRelativeTime(item.timestamp)}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <p
+              className="mt-4 text-sm"
+              style={{ color: "var(--text-secondary)" }}
             >
-              Recent activity
-            </h3>
-            {loading ? (
-              <div className="mt-4 space-y-3">
-                {Array.from({ length: 4 }).map((_, i) => (
-                  <div
-                    key={i}
-                    className="h-6 w-48 rounded shimmer"
-                    style={{ backgroundColor: "var(--bg-secondary)" }}
-                  />
-                ))}
-              </div>
-            ) : activity.length > 0 ? (
-              <ul className="mt-4 space-y-3">
-                {activity.map((item) => (
-                  <li key={item.repo} className="flex items-baseline gap-3">
-                    <a
-                      href={`https://github.com/lukeinglis/${item.repo}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="font-sans text-base transition-opacity hover:opacity-70"
-                      style={{ color: "var(--text-primary)" }}
-                    >
-                      {item.repo}
-                    </a>
-                    <span
-                      className="font-mono text-xs"
-                      style={{ color: "var(--text-secondary)" }}
-                    >
-                      {eventLabel(item.type)} {formatRelativeTime(item.timestamp)}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-            ) : (
-              <p
-                className="mt-4 text-sm"
-                style={{ color: "var(--text-secondary)" }}
-              >
-                No recent activity found.
-              </p>
-            )}
-          </div>
-        </ScrollReveal>
+              No recent activity found.
+            </p>
+          )}
+        </div>
       </div>
     </section>
   );

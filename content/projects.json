@@ -6,12 +6,7 @@
         { "name": "ITS Hub", "description": "Inference-Time Scaling Hub", "language": null, "url": "https://github.com/lukeinglis/its_hub_demo", "stars": 0 },
         { "name": "Amortized", "description": "Amortized AI", "language": null, "url": "https://github.com/amortized-ai/amortized", "stars": 0 },
         { "name": "SDG Hub", "description": "Synthetic Data Generation Hub", "language": null, "url": "https://github.com/lukeinglis/sdg_hub_luke", "stars": 0 },
-        { "name": "Training Hub", "description": "LLM training interface", "language": null, "url": "https://github.com/lukeinglis/training_hub", "stars": 0 }
-      ]
-    },
-    {
-      "name": "Work Projects",
-      "projects": [
+        { "name": "Training Hub", "description": "LLM training interface", "language": null, "url": "https://github.com/lukeinglis/training_hub", "stars": 0 },
         { "name": "Remote Factory", "description": "Multi-agent software design and evolution harness", "language": null, "url": "https://github.com/lukeinglis/remote-factory", "stars": 1 },
         { "name": "ForecastBench", "description": "Forecasting benchmark", "language": "Python", "url": "https://github.com/lukeinglis/forecastbench", "stars": 0 },
         { "name": "ITS Strategy", "description": "Inference-time scaling strategy", "language": "HTML", "url": "https://github.com/lukeinglis/its-strategy", "stars": 1 },

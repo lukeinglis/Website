@@ -10,7 +10,7 @@ export function ProjectGrid() {
     <section
       id="projects"
       className="px-6 py-24"
-      style={{ backgroundColor: "var(--bg-primary)" }}
+      style={{ backgroundColor: "var(--bg-secondary)" }}
     >
       <div className="mx-auto max-w-5xl">
         <h2

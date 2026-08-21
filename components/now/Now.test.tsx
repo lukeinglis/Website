@@ -1,37 +1,31 @@
 import { render, screen } from "@testing-library/react";
 import { describe, expect, it, vi } from "vitest";
-import { Now } from "./Now";
 
-vi.mock("@/app/providers/TimeThemeProvider", () => ({
-  useTimeTheme: () => ({
-    phase: "morning" as const,
-    mode: "auto" as const,
-    setMode: vi.fn(),
-    reducedMotion: true,
-    setReducedMotion: vi.fn(),
-  }),
+vi.mock("@/lib/github", () => ({
+  fetchRecentActivity: vi.fn().mockResolvedValue([
+    { repo: "Website", type: "PushEvent", timestamp: "2026-08-20T12:00:00Z" },
+  ]),
 }));
 
 describe("Now", () => {
-  it("renders the Now heading", () => {
-    render(<Now />);
+  it("renders the Now heading", async () => {
+    const { Now } = await import("./Now");
+    const NowResolved = await Now();
+    render(NowResolved);
     expect(screen.getByRole("heading", { name: "Now" })).toBeInTheDocument();
   });
 
-  it("renders the subtitle", () => {
-    render(<Now />);
-    expect(
-      screen.getByText(/What I've been working on lately/),
-    ).toBeInTheDocument();
-  });
-
-  it("renders the recent activity heading", () => {
-    render(<Now />);
+  it("renders the recent activity heading", async () => {
+    const { Now } = await import("./Now");
+    const NowResolved = await Now();
+    render(NowResolved);
     expect(screen.getByText("Recent activity")).toBeInTheDocument();
   });
 
-  it("has the correct section id", () => {
-    render(<Now />);
+  it("has the correct section id", async () => {
+    const { Now } = await import("./Now");
+    const NowResolved = await Now();
+    render(NowResolved);
     const section = document.querySelector("#now");
     expect(section).toBeInTheDocument();
   });

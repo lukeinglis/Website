@@ -21,7 +21,7 @@ export function Interests() {
     <section
       id="interests"
       className="px-6 py-24"
-      style={{ backgroundColor: "var(--bg-primary)" }}
+      style={{ backgroundColor: "var(--bg-secondary)" }}
     >
       <div className="mx-auto max-w-5xl">
         <ScrollReveal>
@@ -40,7 +40,7 @@ export function Interests() {
             Sports have been a part of my life since before I can remember.
           </p>
         </ScrollReveal>
-        <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-4">
+        <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-5">
           {teams.map((team) => (
             <ScrollReveal key={team.name} delay={0.2}>
               <div

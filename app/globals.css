@@ -10,8 +10,6 @@
   --text-secondary: #d8dee9;
   --accent: #88c0d0;
   --border: #4c566a;
-  --accent-seasonal: #a3be8c;
-  --particle-color: #88c0d0;
   --background: var(--bg-primary);
   --foreground: var(--text-primary);
 }

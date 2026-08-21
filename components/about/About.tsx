@@ -29,14 +29,14 @@ const workAreas = [
 ];
 
 const galleryPhotos = [
-  { src: "/images/gallery/photo-1.jpg", alt: "" },
-  { src: "/images/gallery/photo-2.jpg", alt: "" },
-  { src: "/images/gallery/photo-3.jpg", alt: "" },
-  { src: "/images/gallery/photo-4.jpg", alt: "" },
-  { src: "/images/gallery/photo-5.jpg", alt: "" },
-  { src: "/images/gallery/photo-6.jpg", alt: "" },
-  { src: "/images/gallery/photo-7.jpg", alt: "" },
-  { src: "/images/gallery/photo-8.jpg", alt: "" },
+  { src: "/images/gallery/photo-4.jpg", alt: "At the coast" },
+  { src: "/images/gallery/photo-2.jpg", alt: "At an IBM event" },
+  { src: "/images/gallery/photo-3.jpg", alt: "Our dalmatian in the snow" },
+  { src: "/images/gallery/photo-1.jpg", alt: "With my partner in Chicago" },
+  { src: "/images/gallery/photo-5.jpg", alt: "Family at an Orioles game" },
+  { src: "/images/gallery/photo-6.jpg", alt: "On the field at Auburn" },
+  { src: "/images/gallery/photo-7.jpg", alt: "Our dalmatian on a walk" },
+  { src: "/images/gallery/photo-8.jpg", alt: "Our dalmatian on the couch" },
 ];
 
 export function About() {
