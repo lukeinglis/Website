@@ -19,11 +19,11 @@ const timeline = [
 
 const workAreas = [
   "Inference-Time Scaling",
-  "Post-Training Techniques",
   "Model Customization",
-  "Continual Learning",
-  "Enterprise AI",
-  "Cost-Effective AI Systems",
+  "Cross-team Strategy & Operations",
+  "Partnership Development",
+  "Program Leadership",
+  "Stakeholder Alignment",
 ];
 
 export function About() {
@@ -49,14 +49,74 @@ export function About() {
               style={{ color: "var(--text-secondary)" }}
             >
               <p>
-                I&apos;m a Technical Product Manager at Red Hat, working with
-                the AI Innovation Team on inference-time scaling and
-                post-training techniques. Before that I spent seven years at IBM
-                Research, including time with the MIT-IBM Watson AI Lab.
+                I&apos;m a Technical Product Manager at Red Hat AI, working with
+                the{" "}
+                <a
+                  href="https://ai-innovation.team/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline transition-opacity hover:opacity-70"
+                  style={{ color: "var(--accent)" }}
+                >
+                  AI Innovation Team
+                </a>{" "}
+                to translate emerging research into practical product
+                capabilities. My focus is bringing inference-time scaling,
+                advanced model customization, and post-training techniques into
+                enterprise AI platforms, helping organizations get more value
+                from AI without starting from scratch.
               </p>
               <p>
-                I studied at Auburn, where I worked in sports information and
-                media relations before moving into tech.
+                Before Red Hat, I spent seven years at{" "}
+                <a
+                  href="https://research.ibm.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline transition-opacity hover:opacity-70"
+                  style={{ color: "var(--accent)" }}
+                >
+                  IBM Research
+                </a>
+                , supporting AI research organizations and large-scale
+                partnerships, including the{" "}
+                <a
+                  href="https://mitibm.mit.edu/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline transition-opacity hover:opacity-70"
+                  style={{ color: "var(--accent)" }}
+                >
+                  MIT-IBM Watson AI Lab
+                </a>
+                . I spent most of that time connecting research, product
+                strategy, and customer needs to accelerate the path from ideas
+                to real-world impact.
+              </p>
+              <p>
+                Outside of work I&apos;m usually putting together side projects.
+                I&apos;m currently working on{" "}
+                <a
+                  href="https://reelpalate.lukeinglis.me/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline transition-opacity hover:opacity-70"
+                  style={{ color: "var(--accent)" }}
+                >
+                  Reel Palate
+                </a>{" "}
+                and a handful of other{" "}
+                <a
+                  href="https://github.com/lukeinglis"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline transition-opacity hover:opacity-70"
+                  style={{ color: "var(--accent)" }}
+                >
+                  side projects
+                </a>
+                . I studied at Auburn, where I worked in sports information and
+                media relations, and I&apos;m still a big sports fan (Auburn,
+                Orioles, Chelsea, Timberwolves).
               </p>
             </div>
           </ScrollReveal>

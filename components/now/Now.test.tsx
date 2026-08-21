@@ -20,30 +20,14 @@ describe("Now", () => {
 
   it("renders the subtitle", () => {
     render(<Now />);
-    expect(screen.getByText(/What I.m up to lately/)).toBeInTheDocument();
-  });
-
-  it("renders the last updated date", () => {
-    render(<Now />);
-    expect(screen.getByText(/Updated 2026-08-13/)).toBeInTheDocument();
-  });
-
-  it("renders working on heading and items", () => {
-    render(<Now />);
-    expect(screen.getByText("Working on")).toBeInTheDocument();
     expect(
-      screen.getByText("Inference-time scaling for enterprise LLMs"),
+      screen.getByText(/What I've been working on lately/),
     ).toBeInTheDocument();
-    expect(screen.getByText("Red Hat AI")).toBeInTheDocument();
-    expect(screen.getByText("lukeinglis.me redesign")).toBeInTheDocument();
-    expect(screen.getByText("Side project")).toBeInTheDocument();
   });
 
-  it("hides empty categories", () => {
+  it("renders the recent activity heading", () => {
     render(<Now />);
-    expect(screen.queryByText("Reading")).not.toBeInTheDocument();
-    expect(screen.queryByText("Watching")).not.toBeInTheDocument();
-    expect(screen.queryByText("Cooking")).not.toBeInTheDocument();
+    expect(screen.getByText("Recent activity")).toBeInTheDocument();
   });
 
   it("has the correct section id", () => {

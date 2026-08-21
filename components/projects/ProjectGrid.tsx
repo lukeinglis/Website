@@ -38,6 +38,20 @@ export function ProjectGrid() {
                 <ProjectCard key={project.name} project={project} />
               ))}
             </ProjectGridClient>
+            {category.name === "Personal" && (
+              <p className="mt-4 text-sm" style={{ color: "var(--text-secondary)" }}>
+                See more on{" "}
+                <a
+                  href="https://github.com/lukeinglis"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline transition-opacity hover:opacity-70"
+                  style={{ color: "var(--accent)" }}
+                >
+                  GitHub
+                </a>
+              </p>
+            )}
           </div>
         ))}
       </div>

@@ -67,6 +67,55 @@ export async function fetchGitHubRepos(): Promise<GitHubRepo[]> {
     }));
 }
 
+export interface RecentActivity {
+  repo: string;
+  type: string;
+  timestamp: string;
+}
+
+interface GitHubEvent {
+  type: string;
+  repo: { name: string };
+  created_at: string;
+}
+
+export async function fetchRecentActivity(): Promise<RecentActivity[]> {
+  const headers: HeadersInit = {
+    Accept: "application/vnd.github.v3+json",
+  };
+
+  const token = process.env.GITHUB_TOKEN;
+  if (token) {
+    headers.Authorization = `Bearer ${token}`;
+  }
+
+  const response = await fetch(
+    `https://api.github.com/users/${GITHUB_USERNAME}/events/public?per_page=100`,
+    { headers, next: { revalidate: 3600 } },
+  );
+
+  if (!response.ok) {
+    throw new Error(`GitHub API error: ${response.status}`);
+  }
+
+  const events: GitHubEvent[] = await response.json();
+
+  const repoMap = new Map<string, RecentActivity>();
+
+  for (const event of events) {
+    const repo = event.repo.name.replace(`${GITHUB_USERNAME}/`, "");
+    if (!repoMap.has(repo)) {
+      repoMap.set(repo, {
+        repo,
+        type: event.type,
+        timestamp: event.created_at,
+      });
+    }
+  }
+
+  return Array.from(repoMap.values()).slice(0, 8);
+}
+
 export const languageColors: Record<string, string> = {
   TypeScript: "#3178c6",
   JavaScript: "#f1e05a",

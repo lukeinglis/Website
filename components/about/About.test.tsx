@@ -30,15 +30,15 @@ describe("About", () => {
     expect(
       screen.getByText("Sports Information & Media Relations"),
     ).toBeInTheDocument();
-    expect(screen.getByText("IBM Research")).toBeInTheDocument();
-    expect(screen.getByText("Red Hat AI")).toBeInTheDocument();
+    expect(screen.getAllByText("IBM Research").length).toBeGreaterThanOrEqual(1);
+    expect(screen.getAllByText("Red Hat AI").length).toBeGreaterThanOrEqual(1);
   });
 
   it("renders work area items", () => {
     render(<About />);
     expect(screen.getByText("Inference-Time Scaling")).toBeInTheDocument();
-    expect(screen.getByText("Post-Training Techniques")).toBeInTheDocument();
-    expect(screen.getByText("Enterprise AI")).toBeInTheDocument();
-    expect(screen.getByText("Cost-Effective AI Systems")).toBeInTheDocument();
+    expect(screen.getByText("Model Customization")).toBeInTheDocument();
+    expect(screen.getByText("Program Leadership")).toBeInTheDocument();
+    expect(screen.getByText("Stakeholder Alignment")).toBeInTheDocument();
   });
 });
