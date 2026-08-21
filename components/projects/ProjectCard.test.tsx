@@ -39,19 +39,10 @@ describe("ProjectCard", () => {
     expect(screen.getByText("A test repository")).toBeInTheDocument();
   });
 
-  it("renders language with color dot", () => {
+  it("does not render language or star metadata", () => {
     render(<ProjectCard project={mockProject} />);
-    expect(screen.getByText("TypeScript")).toBeInTheDocument();
-  });
-
-  it("renders star count", () => {
-    render(<ProjectCard project={mockProject} />);
-    expect(screen.getByText("42")).toBeInTheDocument();
-  });
-
-  it("hides star count when zero", () => {
-    render(<ProjectCard project={{ ...mockProject, stars: 0 }} />);
-    expect(screen.queryByText("0")).not.toBeInTheDocument();
+    expect(screen.queryByText("TypeScript")).not.toBeInTheDocument();
+    expect(screen.queryByText("42")).not.toBeInTheDocument();
   });
 
   it("hides description when empty string", () => {

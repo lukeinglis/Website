@@ -30,18 +30,16 @@ describe("Interests", () => {
 
   it("renders league labels", () => {
     render(<Interests />);
-    expect(screen.getByText("College Football")).toBeInTheDocument();
+    expect(screen.getByText("NCAA")).toBeInTheDocument();
     expect(screen.getByText("MLB")).toBeInTheDocument();
     expect(screen.getByText("Premier League")).toBeInTheDocument();
     expect(screen.getByText("NBA")).toBeInTheDocument();
   });
 
-  it("renders subtitle about Auburn", () => {
+  it("renders other interests", () => {
     render(<Interests />);
-    expect(
-      screen.getByText(
-        "Sports have been part of my life since working in media relations at Auburn.",
-      ),
-    ).toBeInTheDocument();
+    expect(screen.getByText("Movies & TV")).toBeInTheDocument();
+    expect(screen.getByText("Cooking")).toBeInTheDocument();
+    expect(screen.getByText("Video Games")).toBeInTheDocument();
   });
 });
