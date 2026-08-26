@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     title: "Luke Inglis",
     description:
       "Technical Product Manager at Red Hat AI, focused on bringing inference-time scaling and post-training techniques into enterprise AI platforms.",
-    url: "https://lukeinglis.me",
+    url: "https://www.lukeinglis.me",
     siteName: "Luke Inglis",
     locale: "en_US",
     type: "website",
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     description:
       "Technical Product Manager at Red Hat AI, focused on bringing inference-time scaling and post-training techniques into enterprise AI platforms.",
   },
-  metadataBase: new URL("https://lukeinglis.me"),
+  metadataBase: new URL("https://www.lukeinglis.me"),
   robots: {
     index: true,
     follow: true,

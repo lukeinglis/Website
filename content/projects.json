@@ -3,22 +3,22 @@
     {
       "name": "Work",
       "projects": [
-        { "name": "ITS Hub", "description": "Inference-Time Scaling Hub", "language": null, "url": "https://github.com/lukeinglis/its_hub_demo", "stars": 0 },
-        { "name": "Amortized", "description": "Amortized AI", "language": null, "url": "https://github.com/amortized-ai/amortized", "stars": 0 },
-        { "name": "SDG Hub", "description": "Synthetic Data Generation Hub", "language": null, "url": "https://github.com/lukeinglis/sdg_hub_luke", "stars": 0 },
-        { "name": "Training Hub", "description": "LLM training interface", "language": null, "url": "https://github.com/lukeinglis/training_hub", "stars": 0 },
-        { "name": "Remote Factory", "description": "Multi-agent software design and evolution harness", "language": null, "url": "https://github.com/lukeinglis/remote-factory", "stars": 1 },
-        { "name": "ForecastBench", "description": "Forecasting benchmark", "language": "Python", "url": "https://github.com/lukeinglis/forecastbench", "stars": 0 },
-        { "name": "ITS Strategy", "description": "Inference-time scaling strategy", "language": "HTML", "url": "https://github.com/lukeinglis/its-strategy", "stars": 1 },
-        { "name": "Work Vault", "description": "AI-powered work vault built on Obsidian + Claude Code", "language": "Python", "url": "https://github.com/lukeinglis/work-vault", "stars": 5 },
-        { "name": "AI Innovation Team Website", "description": "Red Hat AI Innovation Team website", "language": null, "url": null, "stars": 0 }
+        { "name": "ITS Hub", "description": "A Python library for inference-time scaling LLMs", "url": "https://github.com/lukeinglis/its_hub_demo" },
+        { "name": "Amortized", "description": "Build task models that replace frontier API calls", "url": "https://github.com/amortized-ai/amortized" },
+        { "name": "SDG Hub", "description": "Synthetic Data Generation Toolkit for LLMs", "url": "https://github.com/lukeinglis/sdg_hub_luke" },
+        { "name": "Training Hub", "description": "An algorithm-focused interface for common llm training, continual learning, and reinforcement learning techniques", "url": "https://github.com/lukeinglis/training_hub" },
+        { "name": "Remote Factory", "description": "Domain-agnostic multi-agent software design and evolution harness", "url": "https://github.com/lukeinglis/remote-factory" },
+        { "name": "ForecastBench", "description": "Forecasting benchmark", "url": "https://github.com/lukeinglis/forecastbench" },
+        { "name": "ITS Strategy", "description": "Inference-time scaling strategy", "url": "https://github.com/lukeinglis/its-strategy" },
+        { "name": "Work Vault", "description": "AI-powered work vault built on Obsidian + Claude Code", "url": "https://github.com/lukeinglis/work-vault" },
+        { "name": "AI Innovation Team Website", "description": "Red Hat AI Innovation Team website", "url": null }
       ]
     },
     {
       "name": "Personal",
       "projects": [
-        { "name": "Reel Palate", "description": "Movie and TV recommendation app", "language": null, "url": "https://reelpalate.lukeinglis.me", "stars": 0 },
-        { "name": "Website", "description": "This site", "language": "TypeScript", "url": "https://github.com/lukeinglis/Website", "stars": 0 }
+        { "name": "Reel Palate", "description": "Movie and TV recommendation app", "url": "https://reelpalate.lukeinglis.me" },
+        { "name": "Website", "description": "This site", "url": "https://github.com/lukeinglis/Website" }
       ]
     }
   ]

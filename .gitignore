@@ -52,3 +52,9 @@ next-env.d.ts
 # IDE
 .idea/
 .vscode/
+
+# Claude Code
+CLAUDE.md
+AGENTS.md
+.factory/
+.factory-worktrees/

@@ -27,34 +27,38 @@ export function ScrollReveal({
     let ctx: { revert: () => void } | undefined;
 
     (async () => {
-      const gsapModule = await import("gsap");
-      const { ScrollTrigger } = await import("gsap/ScrollTrigger");
-      const gsap = gsapModule.default;
-      gsap.registerPlugin(ScrollTrigger);
+      try {
+        const gsapModule = await import("gsap");
+        const { ScrollTrigger } = await import("gsap/ScrollTrigger");
+        const gsap = gsapModule.default;
+        gsap.registerPlugin(ScrollTrigger);
 
-      const timing = getAnimationTiming(phase);
-      const targets = stagger ? el.children : el;
+        const timing = getAnimationTiming(phase);
+        const targets = stagger ? el.children : el;
 
-      ctx = gsap.context(() => {
-        gsap.fromTo(
-          targets,
-          { y: 40, opacity: 0 },
-          {
-            y: 0,
-            opacity: 1,
-            duration: timing.duration,
-            ease: timing.ease,
-            delay,
-            stagger: stagger ? timing.staggerDelay : 0,
-            force3D: true,
-            scrollTrigger: {
-              trigger: el,
-              start: "top 85%",
-              toggleActions: "play none none none",
+        ctx = gsap.context(() => {
+          gsap.fromTo(
+            targets,
+            { y: 40, opacity: 0 },
+            {
+              y: 0,
+              opacity: 1,
+              duration: timing.duration,
+              ease: timing.ease,
+              delay,
+              stagger: stagger ? timing.staggerDelay : 0,
+              force3D: true,
+              scrollTrigger: {
+                trigger: el,
+                start: "top 85%",
+                toggleActions: "play none none none",
+              },
             },
-          },
-        );
-      }, el);
+          );
+        }, el);
+      } catch {
+        el.style.opacity = "1";
+      }
     })();
 
     return () => ctx?.revert();

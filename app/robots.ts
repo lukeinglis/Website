@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://lukeinglis.me/sitemap.xml",
+    sitemap: "https://www.lukeinglis.me/sitemap.xml",
   };
 }
