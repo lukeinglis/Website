@@ -3,7 +3,7 @@
     {
       "title": "Inference-time scaling on Red Hat AI: Improving model reliability",
       "publication": "Red Hat Developer",
-      "url": "https://developers.redhat.com/articles/2026/07/31/inference-time-scaling-red-hat-ai-improving-model-reliability#"
+      "url": "https://developers.redhat.com/articles/2026/07/31/inference-time-scaling-red-hat-ai-improving-model-reliability"
     }
   ],
   "papers": [
@@ -40,7 +40,7 @@
       "url": "https://arxiv.org/abs/2403.01081"
     },
     {
-      "title": "Researchers from IBM and MIT Introduce LAB: A Novel AI Method for LLM Training",
+      "title": "Researchers from IBM and MIT Introduce LAB: A Novel AI Method Designed to Overcome the Scalability Challenges in the Instruction Tuning Phase of Large Language Model (LLM) Training",
       "publication": "MarkTechPost",
       "url": "https://www.marktechpost.com/2024/03/19/researchers-from-ibm-and-mit-introduce-lab-a-novel-ai-method-designed-to-overcome-the-scalability-challenges-in-the-instruction-tuning-phase-of-large-language-model-llm-training/"
     },

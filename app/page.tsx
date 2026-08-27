@@ -13,7 +13,7 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
   name: "Luke Inglis",
-  url: "https://lukeinglis.me",
+  url: "https://www.lukeinglis.me",
   sameAs: [
     "https://github.com/lukeinglis",
     "https://www.linkedin.com/in/luke-inglis/",

@@ -10,9 +10,7 @@ export interface GitHubRepo {
 export interface Project {
   name: string;
   description: string;
-  language: string | null;
   url: string | null;
-  stars: number;
 }
 
 export interface ProjectCategory {
