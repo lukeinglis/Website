@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Newsreader } from "next/font/google";
 import { headers } from "next/headers";
 import { TimeThemeProvider } from "@/app/providers/TimeThemeProvider";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -69,6 +70,7 @@ export default async function RootLayout({
         >
           {children}
         </TimeThemeProvider>
+        <Analytics />
       </body>
     </html>
   );
